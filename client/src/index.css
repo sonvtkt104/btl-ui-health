@@ -17,6 +17,22 @@ code {
   --txt-color-hover: #518372;
 }
 
+:root {
+  --color-start: #FFB721;
+  --color-blue: #1890ff;
+  --color-blue-light: #b1e3ff;
+  --color-yellow: #FFAA33;
+  --color-red: #FF3333;
+  --color-orange: #FF725E;
+  --color-orange-light: #FF8D7C;
+  --color-green: #00CC66;
+  --color-primary: #38383A;
+  --background-color: rgb(246, 246, 247);
+  --color-shadow: #cacaca;
+  --color-border: #e7e7e7;
+  --color-white: rgb(246, 246, 247);
+}
+
 * {
   margin: 0;
   padding: 0;

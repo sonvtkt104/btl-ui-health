@@ -1,0 +1,47 @@
+.content-conversation {
+    flex-basis: 65%;
+    border: 1px solid gray;
+    height: 450px;
+  }
+  .content-conversation h1 {
+    width: 100%;
+    background-color: #9c9c9c;
+    padding: 10px;
+    box-shadow: 0px 10px 10px -5px black;
+    margin-bottom: 10px;
+  }
+  .content-conversation > div {
+    height: 320px;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+  .content-conversation > div > p {
+    clear:both;
+    float:left;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: rgb(140, 174, 236);
+    max-width: 65%;
+    word-break: normal;
+  }
+  .content-conversation > div > p.owner {
+    float: right;
+    background: rgb(206, 206, 206);
+  }
+  .content-conversation input {
+    outline: none;
+    border: 1px solid rgb(192, 192, 192);
+    margin: 20px 15px 0 15px;
+    width: 80%;
+    height: 30px;
+    word-break:normal;
+    padding: 0 15px;
+  }
+  .content-conversation button {
+    border: none;
+    width: 10%;
+    height: 30px;
+    background-color: rgb(140, 174, 236);
+    cursor: pointer;
+  }
