@@ -5,7 +5,8 @@ import {
     Home,
     History,
     Chat,
-    Conversation
+    Conversation,
+    SignIn
 } from '../pages'
 
 export default function Router() {
@@ -19,6 +20,7 @@ export default function Router() {
                     ))
                 }
                 <Route path="/" element={<Home />} />
+                <Route path="/SignIn" element={<SignIn />} />
                 <Route path="/history" element={<History />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/message" element={<Conversation />} />
