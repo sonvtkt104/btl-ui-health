@@ -1,0 +1,92 @@
+:root {
+    --color-start: #FFB721;
+    --color-blue: #1890ff;
+    --color-blue-light: #b1e3ff;
+    --color-yellow: #FFAA33;
+    --color-red: #FF3333;
+    --color-orange: #FF725E;
+    --color-orange-light: #FF8D7C;
+    --color-green: #00CC66;
+    --color-primary: #38383A;
+    --background-color: rgb(246, 246, 247);
+    --color-shadow: #cacaca;
+    --color-border: #e7e7e7;
+    --color-white: rgb(246, 246, 247);
+  }
+  
+
+.homeContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    padding: 4px 0;
+}
+
+.header{
+    width: 380px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 380px;
+    margin-bottom: 12px;
+    bottom: 0;
+    border-top: 3px var(--color-shadow)
+}
+
+.addFood{
+    display: flex;
+    border-bottom: 30px;
+    right: 0px;
+}
+
+.addButton{
+    width: 44px;
+    height: 44px;    
+    border-radius: 9999px;
+    background-color: var(--color-blue);
+}
+
+.buttonList{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.diary, .me{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.8s;
+    width: 80px;
+    border-radius: 12px;
+}
+
+.chart{
+
+}
+
+.tips{
+    width: 380px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--color-primary);
+    border-style: dashed; 
+    box-shadow: 0 0 4px var(--color-shadow);
+}
