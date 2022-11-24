@@ -1,0 +1,184 @@
+.foodDetailContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background-color);
+  overflow-x: none;
+  padding: 4px 0;
+}
+.foodDetailContainer__header {
+    width: 380px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0px;
+    box-shadow: 0 0 2px var(--color-shadow);
+}
+
+.foodDetailContainer__header i {
+    cursor: pointer;
+    padding: 8px 24px;
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.back__searchFoods {
+    color: var(--color-black);
+    transition: 0.5s;
+}
+
+.back__searchFoods:hover {
+    color: var(--color-black);
+    transform: scale(1.2);
+}
+
+.foodDetailContainer__header i:hover {
+    transform: scale(1.2);
+}
+
+.foodDetailContainer__content {
+    width: 380px;
+    padding: 4px 4px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 2px var(--color-shadow);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.fdc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fdc__foodImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fdc__foodName {
+    margin: 12px 0px 20px 0px;
+}
+.fdc__Index {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.fdc__Index__Info-Calories,
+.fdc__Index__Info-Carbs,
+.fdc__Index__Info-Protein,
+.fdc__Index__Info-Fat
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.fdc__Index__Info-Calories:hover,
+.fdc__Index__Info-Carbs:hover,
+.fdc__Index__Info-Protein:hover,
+.fdc__Index__Info-Fat:hover
+{
+    background-color: rgb(192, 192, 228);
+}
+
+.fdc__Option {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.fdc__Option__inner {
+    width: 100%;
+    display: flex;
+    margin-bottom: 6px;
+}
+
+.fdc__Option__Quantity {
+    background-color: var(--color-blue);
+    width: 60px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fdc__Option__Type {
+    width: 100%;
+    height: 40px;
+    margin-left: 8px;
+}
+
+.fdc__Option__Type select {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-blue);
+    border-radius: 12px;
+    padding: 0 12px;
+    border: none;
+    outline: none;
+}
+
+.fdc__Option__Meal select {
+    width: 100%;
+    height: 40px;
+    background-color: var(--color-blue);
+    border-radius: 12px;
+    padding: 0 12px;
+    border: none;
+    outline: none;
+}
+.fdc__Details {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.fdc__How {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.fdc__How__Walking, .fdc__How__Biking, .fdc__How__Running {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    width: 80px;
+    border-radius: 12px;
+}
+
+.fdc__How__Walking:hover, .fdc__How__Biking:hover, .fdc__How__Running:hover {
+    transform: scale(1.1);
+    background-color: rgb(202, 199, 199);
+}
+
+.fdc__Button__Add {
+    width: 200px;
+    height: 44px;    
+    border-radius: 9999px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--color-green);
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.fdc__Button__Add:hover {
+    transform: scale(0.9);
+    background-color: rgba(0,0,0,);
+    opacity: 0.8;
+}

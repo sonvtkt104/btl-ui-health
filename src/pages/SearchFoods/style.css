@@ -1,0 +1,104 @@
+.searchContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    padding: 4px 0;
+}
+
+.searchContainer__box1 {
+    width: 380px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.searchContainer__box1 i {
+    transition: 0.8s;
+}
+
+.searchContainer__box1 i:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.searchProduct {
+    display: flex;
+    background-color: var(--color-shadow);
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: gray;
+}
+
+.searchProduct .searchProduct__input {
+    width: 200px;
+    border: none;
+    outline: none;
+    background-color: var(--color-gray);
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.searchContainer__box2 {
+    width: 380px;
+    height: 40px;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.searchContainer__box2__button {
+    height: 100%;
+    width: 110px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.searchContainer__box2__button.active {
+    color: var(--color-green);
+    background-color: #fff;
+}
+
+.active {
+    color: red;
+    background-color: #fff;
+}
+
+.borderLeft {
+    width: 2px;
+    height: 15px;
+    background-color: black;
+    margin: auto;
+}
+
+.searchContainer__box3 {
+    width: 380px;
+    height: 100%;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.iconF {
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+.iconF.close {
+    color: black;
+}
+
+button {
+    border: none;
+    outline: none;
+}
