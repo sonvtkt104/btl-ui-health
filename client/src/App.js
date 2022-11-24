@@ -4,8 +4,8 @@ import { Header, Footer } from "./components";
 function App() {
   return (
     <div className="app">
-      {/* <Header /> */}
-        <Router />
+      <Header />
+      <Router />
       {/* <Footer /> */}
     </div>
   );

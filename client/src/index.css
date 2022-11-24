@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 
 code {
@@ -15,6 +16,9 @@ code {
 :root{
   --main-color: #001812;
   --txt-color-hover: #518372;
+}
+
+:root {
   --color-start: #FFB721;
   --color-blue: #1890ff;
   --color-blue-light: #b1e3ff;
@@ -37,6 +41,7 @@ code {
   user-select: none;
   /* color: var(--main-color); */
   
+  color: var(--main-color);
 }
 
 html {
