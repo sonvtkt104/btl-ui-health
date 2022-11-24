@@ -1,3 +1,12 @@
 .history {
     display: block;
 }
+.history-hover {
+    opacity: 0.87;
+}
+:root {
+    --green: #65bc66;
+    --pink: #e5447a;
+    --blue: #43a5f2;
+    --orange: #fe6f46;
+}

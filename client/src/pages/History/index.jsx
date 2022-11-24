@@ -20,6 +20,12 @@ import {
     BarController,
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
+import { Footer } from '../../components'
+import { 
+    Row,
+    Col,
+    Progress
+} from 'antd'
 
 ChartJS.register(
     LinearScale,
@@ -27,7 +33,7 @@ ChartJS.register(
     BarElement,
     PointElement,
     LineElement,
-    Legend,
+    // Legend,
     Tooltip,
     LineController,
     BarController
@@ -59,7 +65,19 @@ const options = {
         point:{
             radius: 0
         }
-    }
+    },
+    // annotation: {
+    //     annotations: [{
+    //        type: 'line',
+    //        drawTime: 'afterDatasetsDraw',
+    //        id: 'strip-line-1',
+    //        mode: 'horizontal',
+    //        scaleID: 'y-axis-0',
+    //        value: 0.3,
+    //        borderColor: 'red',
+    //        borderWidth: 3
+    //     }]
+    // }
 };
   
 const labels = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
@@ -69,33 +87,35 @@ const data = {
     datasets: [
         {
           type: 'line',
-          label: 'Dataset 1',
-          borderColor: 'rgb(255, 99, 132)',
+          label: 'Carbs',
+          borderColor: '#43a5f2',
           borderWidth: 2,
           fill: false,
-          data: labels.map(() => Math.random()),
+          data: labels.map(() => Math.random() * 100),
+
         },
         {
             type: 'line',
-            label: 'Dataset 1',
-            borderColor: 'grey',
+            label: 'Protein',
+            borderColor: '#e5447a',
             borderWidth: 2,
             fill: false,
-            data: labels.map(() => Math.random()),
+            data: labels.map(() => Math.random() * 100),
+
         },
         {
             type: 'line',
-            label: 'Dataset 1',
-            borderColor: 'green',
+            label: 'Fat',
+            borderColor: '#fe6f46',
             borderWidth: 2,
             fill: false,
-            data: labels.map(() => Math.random()),
+            data: labels.map(() => Math.random() * 100),
         },
         {
           type: 'bar',
-          label: 'Dataset 2',
-          backgroundColor: 'rgb(75, 192, 192)',
-          data: labels.map(() => Math.random()),
+          label: 'Calories',
+          backgroundColor: '#65bc66',
+          data: labels.map(() => Math.random() * 100),
           borderColor: 'white',
           borderWidth: 7,
         },
@@ -111,26 +131,162 @@ export default function History() {
 
     return (
         <div className="history">
-            <div>
-                <h1>History</h1>
-                <div>
-                    <VerticalAlignBottomOutlined />
-                    Export
+            <div style={{position: 'fixed', background: 'white', top: '0', left: '0', right: 0, paddingBottom: 20, boxShadow: '1px 1px 20px 0px #d4d4d4'}}>
+                <Row justify='space-between' style={{padding: '30px 25px' }}>
+                    <h1 style={{fontSize: 18}}>History</h1>
+                    <Row className='history-hover' style={{padding: '5px 10px', background: '#e5e5e5', borderRadius: 5, cursor: 'pointer', border: '0.5px solid grey'}}>
+                        <VerticalAlignBottomOutlined style={{fontSize: 18}} />
+                        <span style={{fontSize: 14, marginLeft: 5}}>Export</span>
+                    </Row>
+                </Row>
+                <div className="history-content">
+                    <Row justify='center' style={{textAlign: 'center', fontSize: 16, fontWeight: 'bold'}}>2022</Row>
+                    <Row style={{marginTop: 15, paddingBottom: 20, padding: '0 25px'}} justify="space-between">
+                        <span style={{fontSize: 13, color: 'grey'}}>{moment(startOfWeek).add(-7, 'days').format("ll").slice( 0, -6 ) + " - " + moment(endOfWeek).add(-7, 'days').format("ll").slice( 0, -6 )}</span>
+                        <span style={{fontWeight: 'bold'}}>{moment(startOfWeek).format("ll").slice( 0, -6 ) + " - " + moment(endOfWeek).format("ll").slice( 0, -6 )}</span>
+                        <span style={{fontSize: 13, color: 'grey'}}>{moment(startOfWeek).add(7, 'days').format("ll").slice( 0, -6 ) + " - " + moment(endOfWeek).add(7, 'days').format("ll").slice( 0, -6 )}</span>
+                    </Row>
                 </div>
             </div>
-            <div className="history-content">
-                <div>2022</div>
+            <div style = {{padding: '200px 25px 80px'}}>
                 <div>
-                    <LeftOutlined />
-                    <span>{moment(startOfWeek).add(-7, 'days').format("ll").slice( 0, -6 ) + " - " + moment(endOfWeek).add(-7, 'days').format("ll").slice( 0, -6 )}</span>
-                    <span>{moment(startOfWeek).format("ll").slice( 0, -6 ) + " - " + moment(endOfWeek).format("ll").slice( 0, -6 )}</span>
-                    <span>{moment(startOfWeek).add(7, 'days').format("ll").slice( 0, -6 ) + " - " + moment(endOfWeek).add(7, 'days').format("ll").slice( 0, -6 )}</span>
-                    <RightOutlined />
+                    <Chart type='bar' data={data} options={options}/>
+                    <Row justify='center' style={{margin: '15px 0'}}>
+                        <Col>
+                            <Row>
+                                <Col style={{ marginRight: 5,width: 40, height: 18, background: 'var(--green)' ,borderRadius: '5px'}}></Col>
+                                <Col>Calories</Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                    <Row justify='space-between' style={{padding: '0 10px' }}>
+                        <Col>
+                            <Row>
+                                <Col style={{ marginRight: 5,width: 40, height: 2, background: 'var(--blue)' ,borderRadius: '5px', marginTop: 8}}></Col>
+                                <Col>Carbs</Col>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
+                                <Col style={{ marginRight: 5,width: 40, height: 2, background: 'var(--pink)' ,borderRadius: '5px', marginTop: 8}}></Col>
+                                <Col>Protein</Col>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
+                                <Col style={{ marginRight: 5,width: 40, height: 2, background: 'var(--orange)' ,borderRadius: '5px', marginTop: 8}}></Col>
+                                <Col>Fat</Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                    <Row
+                        style={{margin: '30px 0', fontSize: 16, fontWeight: 'bold'}}
+                    >
+                        Weekly details
+                    </Row>
+                    <Row justify='space-between'>
+                        <Progress 
+                            type="circle"
+                            strokeColor="#43a5f2"
+                            trailColor="#EDF1F5"
+                            strokeWidth={9}
+                            percent={30}
+                            format={(percent) => {
+                                return (
+                                    <div style={{
+                                        position: 'relative',
+                                        color: '#43a5f2',
+                                        fontWeight: 'bold'
+                                    }}>
+                                        {percent}
+                                        <span style={{position: 'absolute', fontSize: 12, color: '#43a5f2'}}>
+                                            %
+                                        </span>
+                                    </div>
+                                );
+                            }}
+                            width={103}
+                        />
+                        <Progress 
+                            type="circle"
+                            strokeColor="#e5447a"
+                            trailColor="#EDF1F5"
+                            strokeWidth={9}
+                            percent={50}
+                            format={(percent) => {
+                                return (
+                                    <div style={{
+                                        position: 'relative',
+                                        color: '#e5447a',
+                                        fontWeight: 'bold'
+                                    }}>
+                                        {percent}
+                                        <span style={{position: 'absolute', fontSize: 12, color: '#e5447a'}}>
+                                            %
+                                        </span>
+                                    </div>
+                                );
+                            }}
+                            width={103}
+                        />
+                        <Progress 
+                            type="circle"
+                            strokeColor="#fe6f46"
+                            trailColor="#EDF1F5"
+                            strokeWidth={9}
+                            percent={70}
+                            format={(percent) => {
+                                return (
+                                    <div style={{
+                                        position: 'relative',
+                                        color: '#fe6f46',
+                                        fontWeight: 'bold'
+                                    }}>
+                                        {percent}
+                                        <span style={{position: 'absolute', fontSize: 12, color: '#fe6f46'}}>
+                                            %
+                                        </span>
+                                    </div>
+                                );
+                            }}
+                            width={103}
+                        />
+                    </Row>
+                    <Row justify='space-between' style={{margin: '15px 0 0px'}}>
+                        <Col style={{fontSize: 16}}>Calories</Col>
+                        <Col style={{fontWeight: 'bold', fontSize: 16}}>14%</Col>
+                    </Row>
+                    <Row>
+                        <Progress percent={50} showInfo={false} strokeColor="#65bc66" />
+                    </Row>
+                    <Row style={{padding: '15px 0'}}>
+                        <Col xs={8} style={{fontWeight: 'bold'}}>Daily average</Col>
+                        <Col xs={8} style={{fontWeight: 'bold'}}>Goal</Col>
+                        <Col xs={8} style={{fontWeight: 'bold'}}>Intake</Col>
+                    </Row>
+                    <Row style={{padding: '5px 0'}}>
+                        <Col xs={8} style={{color: '#454545'}}>Calories</Col>
+                        <Col xs={8} style={{color: '#454545'}}>2515 kcal</Col>
+                        <Col xs={8} style={{color: '#454545'}}>345 kcal</Col>
+                    </Row>
+                    <Row style={{padding: '5px 0'}}>
+                        <Col xs={8} style={{color: '#454545'}}>Carbohydrates</Col>
+                        <Col xs={8} style={{color: '#454545'}}>377 g</Col>
+                        <Col xs={8} style={{color: '#454545'}}>33 g</Col>
+                    </Row>
+                    <Row style={{padding: '5px 0'}}>
+                        <Col xs={8} style={{color: '#454545'}}>Protein</Col>
+                        <Col xs={8} style={{color: '#454545'}}>125 g</Col>
+                        <Col xs={8} style={{color: '#454545'}}>89 g</Col>
+                    </Row>
+                    <Row style={{padding: '5px 0 80px 0'}}>
+                        <Col xs={8} style={{color: '#454545'}}>Fat</Col>
+                        <Col xs={8} style={{color: '#454545'}}>66 g</Col>
+                        <Col xs={8} style={{color: '#454545'}}>12 g</Col>
+                    </Row>
                 </div>
             </div>
-            <div>
-                <Chart type='bar' data={data} options={options}/>
-            </div>
+            <Footer />
         </div>
     )
 }
