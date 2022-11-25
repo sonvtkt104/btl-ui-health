@@ -1,0 +1,9 @@
+.chat-scroll-x::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+.chat-search svg {
+    fill: gray;
+}
+.chat-plus svg {
+    fill: white;
+}
