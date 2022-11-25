@@ -2,8 +2,14 @@ import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faEllipsisVertical, faPersonBiking, faPersonRunning, faPersonWalking } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
+import { Col, Row, Select } from 'antd';
 
 function FoodDetail({data}) {
+
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+    };
+
     return (
         <div className='foodDetailContainer'>
             <div className='foodDetailContainer__header'>
@@ -41,27 +47,109 @@ function FoodDetail({data}) {
                 </div>
                 <div className='fdc__Option'>
                     <div className='fdc__Option__inner'>
-                        <div className='fdc__Option__Quantity'>
-                            {/* <input placeholder='1x' /> */}
-                            1x
-                        </div>
-                        <div className='fdc__Option__Type'>
-                            <select>
-                                <option value={0}>cup (100g)</option>
-                                <option value={1}>cup (200g)</option>
-                                <option value={2}>cup (300g)</option>
-                            </select>
-                        </div>
+                        <Row gutter={0} style={{padding: '0 0 0 8px' ,width: '100%'}} justify={'space-between'} align={'middle'}>
+                            Số lượng: <Col flex={'60px'}>
+                                <Select
+                                    defaultValue="1"
+                                    options={[
+                                        {
+                                            value: 1,
+                                            label: '1'
+                                        },
+                                        {
+                                            value: 2,
+                                            label: '2'
+                                        },
+                                        {
+                                            value: 3,
+                                            label: '3'
+                                        },
+                                        {
+                                            value: 4,
+                                            label: '4'
+                                        },
+                                        {
+                                            value: 5,
+                                            label: '5'
+                                        }
+                                    ]}
+                                    onChange={handleChange}
+                                >
+                                </Select>
+                            </Col>
+                            <Col flex={'auto'}>
+                                <Select
+                                    defaultValue="100 gram"
+                                    style={{
+                                        width: '100%',
+                                    }}
+                                    onChange={handleChange}
+                                    options={[
+                                        {
+                                            value: 100,
+                                            label: '100 gram'
+                                        },
+                                        {
+                                            value: 200,
+                                            label: '200 gram',
+                                        },
+                                        {
+                                            value: 300,
+                                            label: '300 gram',
+                                        },
+                                        {
+                                            value: 400,
+                                            label: '400 gram',
+                                        },
+                                        {
+                                            value: 500,
+                                            label: '500 gram',
+                                        }
+                                    ]}
+                                />
+                            </Col>
+                        </Row>
+                        
+                        
                     </div>
                     <div className='fdc__Option__Meal'>
-                        <select>
-                            <option value={0}>Bữa sáng</option>
-                            <option value={1}>Ăn nhẹ sau bữa sáng</option>
-                            <option value={2}>Bữa trưa</option>
-                            <option value={3}>Ăn nhẹ sau bữa trưa</option>
-                            <option value={4}>Bữa tối</option>
-                            <option value={5}>Ăn nhẹ sau bữa tối</option>
-                        </select>
+                        <Row>
+                            <Col flex={'auto'}>
+                                    <Select
+                                        defaultValue="Bữa sáng"
+                                        style={{
+                                            width: '100%',
+                                        }}
+                                        onChange={handleChange}
+                                        options={[
+                                            {
+                                                value: 'Bữa sáng',
+                                                label: 'Bữa sáng'
+                                            },
+                                            {
+                                                value: 'Ăn nhẹ sau bữa sáng',
+                                                label: 'Ăn nhẹ sau bữa sáng',
+                                            },
+                                            {
+                                                value: 'Bữa trưa',
+                                                label: 'Bữa trưa',
+                                            },
+                                            {
+                                                value: 'Ăn nhẹ sau bữa trưa',
+                                                label: 'Ăn nhẹ sau bữa trưa',
+                                            },
+                                            {
+                                                value: 'Bữa tối',
+                                                label: 'Bữa tối',
+                                            },
+                                            {
+                                                value: 'Ăn nhẹ sau bữa tối',
+                                                label: 'Ăn nhẹ sau bữa tối',
+                                            },
+                                        ]}
+                                    />
+                                </Col>
+                        </Row>
                     </div>
                 </div>
                 <div className='fdc__Details'>
