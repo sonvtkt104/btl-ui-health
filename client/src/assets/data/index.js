@@ -20,7 +20,7 @@ const foods = [
         foodType: 'gram / ml',
         foodCalories: 20,
         foodCarbs: 4.8,
-        foodProtein: 3.7,
+        foodProtein: 6,
         foodFat: 3
     },
     {
