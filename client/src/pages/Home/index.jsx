@@ -11,10 +11,12 @@ import {
     CarryOutOutlined,
     UserOutlined,
     PlusOutlined,
-    SettingOutlined
+    SettingOutlined,
+    InfoCircleOutlined
 } from '@ant-design/icons'
 import './index.css'
 import iconFood from '../../assets/image/foodIcon.png'
+import chuoiTay from '../../assets/image/chuoitay.jpg'
 
 
 export default function Home() {
@@ -48,11 +50,11 @@ export default function Home() {
                         <Col style={{fontSize: 16}}>Bạn vẫn có thể hấp thu 2.515 calories</Col>
                     </Row>
                     <Row>
-                        <Progress percent={50} showInfo={false} strokeColor="#65bc66" />
+                        <Progress percent={5} showInfo={false} strokeColor="#65bc66" />
                     </Row>
                     <Row justify='space-between' style={{margin: '0px 0 15px'}}>
-                        <Col style={{fontSize: 16}}>Đã tiêu thụ 0 calories</Col>
-                        <Col style={{fontWeight: 'bold', fontSize: 16}}>14%</Col>
+                        <Col style={{fontSize: 16}}>Đã tiêu thụ 33 calories</Col>
+                        <Col style={{fontWeight: 'bold', fontSize: 16}}>5%</Col>
                     </Row>
                     <Row justify='space-between'>
                         <Progress 
@@ -60,7 +62,7 @@ export default function Home() {
                             strokeColor="#43a5f2"
                             trailColor="#EDF1F5"
                             strokeWidth={9}
-                            percent={30}
+                            percent={10}
                             format={(percent) => {
                                 return (
                                     <div style={{
@@ -82,7 +84,7 @@ export default function Home() {
                             strokeColor="#e5447a"
                             trailColor="#EDF1F5"
                             strokeWidth={9}
-                            percent={50}
+                            percent={3}
                             format={(percent) => {
                                 return (
                                     <div style={{
@@ -104,7 +106,7 @@ export default function Home() {
                             strokeColor="#fe6f46"
                             trailColor="#EDF1F5"
                             strokeWidth={9}
-                            percent={70}
+                            percent={15}
                             format={(percent) => {
                                 return (
                                     <div style={{
@@ -122,6 +124,26 @@ export default function Home() {
                             width={103}
                         />
                     </Row>
+                </div>
+                <div className='foodChoice'>
+                    <div className='meal'>
+                        <span className='mealName' style={{fontSize:18, fontWeight:'bold'}}>Bữa sáng</ span>
+                        <br/>
+                        <span className='calories'>33 kcal</span>
+                        <div className='food'>
+                            <div>
+                                <img className='foodImage' src={chuoiTay} />
+                            </div>
+                            <div className='foodInfo'>
+                                <span className='foodName'>Chuối tây</span>
+                                <br/>
+                                <span className='details'>33 kcal - 50 gram / ml</span>
+                            </div>
+                            <div className='infoIcon'>
+                                <InfoCircleOutlined />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className='tips'>
                     <div>
@@ -160,7 +182,7 @@ export default function Home() {
                         <div className='measurement'>
                             <span style={{fontSize: 24}}>Tăng 4.0 kg</span>
                             <br />
-                            <span>Ngày 25 tháng 11</span>
+                            <span>Từ ngày 30 tháng 10</span>
                         </div>
                         <div className='startStats'>
                             <span>53.0 kg</span>
@@ -178,6 +200,11 @@ export default function Home() {
                     <div className='icon'>
                         <image scr={iconFood} />
                     </div>
+                </div>
+                <div className='commentary'>
+                    <span style={{fontSize: 18}}>Đánh giá về lượng calo nhập vào</span>
+                    <br />
+                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
                 </div>
             </div>
             <div className='footer'>
