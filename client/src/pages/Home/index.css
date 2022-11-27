@@ -23,12 +23,59 @@
     padding: 4px 0;
 }
 
-.header{
+.diaryContainer{
+    display: block;
+}
+
+.userContainer{
+    display: none;
+}
+
+.diaryHeader, .userHeader{
     width: 380px;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 8px;
     box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.stats{
+    width: 380px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #b1e3ff;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+}
+
+.icon{
+    border-radius: 20px;
+}
+
+.measurement{
+    padding: 10px;
+    border-bottom: 50px;
+}
+
+.measurement span{
+    color:#1e5f9b;
+}
+
+.startStats, .currentStats, .goalStats{
+    width: 70%;
+    align-items: center;
+    background-color: #1c5187;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.startStats span, .currentStats span, .goalStats span{
+    color:#e7e7e7;
 }
 
 .footer{
