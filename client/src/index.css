@@ -32,6 +32,7 @@ code {
   --color-shadow: #cacaca;
   --color-border: #e7e7e7;
   --color-white: rgb(246, 246, 247);
+  --color-new-bg: #f9fdff;
 }
 
 * {
@@ -71,6 +72,11 @@ a:hover{
 .flex-col{
   display: flex;
   flex-direction: column;
+}
+.flex-col-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /*=======================
 Room
@@ -191,4 +197,15 @@ Room
   position: absolute;
   top: 50px;
   right: 50px;
+}
+.app-icon {
+  font-size: 22px;
+}
+.app-icon.active svg{
+  fill: #1890ff;
+  font-size: 24;
+}
+.app-bg-color {
+  background: var(--color-new-bg);
+  background-color: var(--color-new-bg);
 }

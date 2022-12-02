@@ -17,15 +17,16 @@ import {
 import './index.css'
 import iconFood from '../../assets/image/foodIcon.png'
 import chuoiTay from '../../assets/image/chuoitay.jpg'
+import { Footer } from '../../components'
 
 
 export default function Home() {
     
     return (
-        <div className='homeContainer'>
+        <div className='homeContainer' style={{position: 'relative'}}>
             <div className='diaryContainer'>
                 <div className='DiaryHeader'>
-                    <Row justify='space-between' style={{ maxHeight: 100 ,padding: '50px 25px 30px 25px', borderBottom: '1px solid #eeeeee', background: 'white', top: 0, left: 0, right: 0, zIndex: '2'}}>
+                    <Row justify='space-between' style={{ maxHeight: 100 ,padding: '50px 25px 30px 25px', borderBottom: '1px solid #eeeeee', background: 'white', top: 0, left: 0, right: 0, zIndex: '2', position: 'fixed'}}>
                         <Col>
                             <Row>
                                 <Col style={{fontSize: 24, fontWeight: 'bold', lineHeight: '22px'}}>
@@ -126,8 +127,8 @@ export default function Home() {
                     </Row>
                 </div>
                 <div className='foodChoice'>
-                    <div className='meal'>
-                        <span className='mealName' style={{fontSize:18, fontWeight:'bold'}}>Bữa sáng</ span>
+                    <div className='meal' style={{padding: '20px 0'}}>
+                        <span className='mealName' style={{fontSize:18, fontWeight:'bold', marginBottom: 15}}>Bữa sáng</ span>
                         <br/>
                         <span className='calories'>33 kcal</span>
                         <div className='food'>
@@ -207,7 +208,22 @@ export default function Home() {
                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
                 </div>
             </div>
-            <div className='footer'>
+            <PlusOutlined 
+                className='chat-plus'
+                style={{
+                    position: 'fixed', 
+                    bottom: 120,
+                    right: 30,
+                    color: 'white',
+                    padding: 17,
+                    borderRadius: '50%',
+                    background: 'linear-gradient(#7fd8ff, #00b4ff)',
+                    zIndex: 9, 
+                    fontSize: 22
+                }} 
+            />
+            <Footer active='home'/>
+            {/* <div className='footer'>
                 <div className='addFood'>
                     <button className='addButton'><PlusOutlined /></button>
                 </div>
@@ -221,7 +237,7 @@ export default function Home() {
                         <span>Tôi</span>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

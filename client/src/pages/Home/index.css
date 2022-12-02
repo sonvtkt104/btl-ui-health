@@ -24,11 +24,12 @@
 }
 
 .diaryContainer{
-    display: none;
+    display: block;
+    padding: 100px 20px;
 }
 
 .userContainer{
-    display: block;
+    display: none;
 }
 
 .meal{
@@ -39,10 +40,11 @@
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
-    box-shadow: 0 0 5px var(--color-shadow);
-    padding: 20px;
+    box-shadow: 1px 3px 10px -1px #cecece;
+    padding: 13px;
     width: 100%;
-    height: 100px;
+    margin: 20px 0px;
+    height: 60px;
 }
 
 .foodImage{
@@ -146,7 +148,6 @@
 }
 
 .tips{
-    width: 380px;
     justify-content: space-around;
     align-items: center;
     padding: 20px;

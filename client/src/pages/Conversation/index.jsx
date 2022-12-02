@@ -14,13 +14,13 @@ import './index.css'
 
 const messages = [
     {_id: 1, message: "hello"}, 
-    {_id: 2, message: "hello, how are you? "},
-    {_id: 1, message: "I'm fine thank you, and you?"},
-    {_id: 2, message: "hello, sfaf afs  akfjn a nfajsf afn asf akf a nfas"},
-    {_id: 2, message: "hello, ha afjs f kafbsd i"},
-    {_id: 1, message: "hello, hi afjk abf afb kjaf "},
-    {_id: 1, message: "hello, hi"},
-    {_id: 2, message: "hello, hi"},
+    {_id: 2, message: "Xin chào, bạn cần giúp đỡ gì không ạ?"},
+    {_id: 2, message: "Bạn có thấy chỗ nào không khỏe, hay có triệu chứng gì không?"},
+    {_id: 2, message: "Bạn có thể cho chúng tôi biết để chúng tôi tư vấn cho bạn nhanh nhất ạ"},
+    {_id: 1, message: "Vâng, dạo này tôi thường xuyên thấy mệt nhọc, đi lại khó khăn, và chán ăn"},
+    {_id: 1, message: "Thỉnh thoảng thấy tim co lại"},
+    {_id: 1, message: "Bác sĩ có thể cho tôi biết về  chế độ dinh dưỡng trong 1 ngày cần những gì và điều độ ra sao không ạ"},
+    {_id: 1, message: "Và tôi phải tập thể dục như nào mới tốt nhất ạ"},
     {_id: 2, message: "hello, hi"},
     {_id: 2, message: "hello, hi ajkf kf jab fjka"},
     {_id: 1, message: "hello, hi"},
@@ -71,7 +71,7 @@ export default function Conversation() {
                             />
                         </Col>
                         <Col style={{marginLeft: 8, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                            <p style={{ fontWeight: 'bold', fontSize: '16px' }}>Tom johnson</p>
+                            <p style={{ fontWeight: 'bold', fontSize: '16px' }}>Hiếu Văn</p>
                             <span style={{ color: 'grey'}}>Online</span>
                         </Col>
                     </Row>
