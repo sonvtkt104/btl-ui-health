@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { SearchFoods, FoodDetail} from '../pages'
+import { SearchFoods, FoodDetail, Diagnosis} from '../pages'
 import foods from '../assets/data'
 import { 
     Home,
@@ -24,6 +24,7 @@ export default function Router() {
                 <Route path="/history" element={<History />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/message" element={<Conversation />} />
+                <Route path="/diagnosis" element={<Diagnosis />} />
             </Routes>
         </BrowserRouter>
     )

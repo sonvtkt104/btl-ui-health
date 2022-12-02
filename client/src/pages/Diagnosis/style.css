@@ -1,0 +1,58 @@
+:root {
+    --color-start: #FFB721;
+    --color-blue: #1890ff;
+    --color-blue-light: #b1e3ff;
+    --color-yellow: #FFAA33;
+    --color-red: #FF3333;
+    --color-orange: #FF725E;
+    --color-orange-light: #FF8D7C;
+    --color-green: #00CC66;
+    --color-primary: #38383A;
+    --background-color: rgb(246, 246, 247);
+    --color-shadow: #cacaca;
+    --color-border: #e7e7e7;
+    --color-white: rgb(246, 246, 247);
+  }
+
+.diagnosisContainer{
+
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    padding: 4px 0;
+}
+
+.basicInfo, .diet{
+  padding: 10px;
+  display:none;
+}
+
+span{
+  font-size: 18;
+}
+
+
+.diagnosisResult{
+    width: 380px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--color-blue);
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.exit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

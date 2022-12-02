@@ -11,6 +11,15 @@ import {
 import './index.css'
 import { Footer } from '../../components/index'
 
+const data = [
+    "Hiếu Văn",
+    "Sơn",
+    "Hava",
+    "Madison",
+    "Văn Toàn"
+]
+
+
 export default function Chat () {
     return (
         <div
@@ -39,18 +48,19 @@ export default function Chat () {
                     <div className='chat-scroll-x' style={{ overflowX: 'scroll', paddingBottom: 20, paddingLeft: 25, borderBottom: '1px solid #eeeeee'}}>
                         <div style={{display: "inline-flex"}}>
                             {
-                                Array.from(Array(10).keys()).map((item, i) => (
+                                Array.from(Array(5).keys()).map((item, i) => (
                                     <p
-                                        className="box-user"
+                                        className="box-user active"
                                         style = {{ 
                                             width: 60, height : 60,
                                             borderRadius: '50%',
-                                            backgroundImage: 'url("/images/logo-user.jpeg")',
+                                            backgroundImage: `url("/images/logo-user-${i}.jpeg")`,
                                             backgroundSize: 'cover',
-                                            marginRight: 15
+                                            marginRight: 15,
+                                            position: 'relative',
                                         }}
                                     >
-                                    
+                                        <span></span>
                                     </p>
                                 ))
                             }
@@ -76,15 +86,15 @@ export default function Chat () {
                             Bác sĩ</Col>
                     </Row>
                     {
-                        Array.from(Array(8).keys()).map((item, i) => (
+                        Array.from(Array(5).keys()).map((item, i) => (
                             <Row justify='space-between' style={{marginBottom: 20}}>
                                 <Col xs={19}>
                                     <Row>
                                         <Col >
-                                            <img style={{width: 60, height: 60, borderRadius: '50%'}} src="/images/logo-user.jpeg" alt="" />
+                                            <img style={{width: 60, height: 60, borderRadius: '50%'}} src={`/images/logo-user-${i}.jpeg`} alt="" />
                                         </Col>
                                         <Col style={{marginLeft: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                                            <p style={{fontWeight: 'bold', fontSize: '16px', marginBottom: 5}}>Tom johnson</p>
+                                            <p style={{fontWeight: 'bold', fontSize: '16px', marginBottom: 5}}>{data[i]}</p>
                                             <span style={{fontSize: 14, color: '#a6abae'}}>hey, how are you?</span>
                                         </Col>
                                     </Row>
@@ -111,7 +121,7 @@ export default function Chat () {
                     }} 
                 />
             </div>
-            <Footer />
+            <Footer active='chat'/>
         </div>
     )
 }

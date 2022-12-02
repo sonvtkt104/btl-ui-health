@@ -1,4 +1,7 @@
-export default function Footer () {
+import {Row, Col} from 'antd'
+import {HomeOutlined, UserOutlined, MessageOutlined, SettingOutlined} from '@ant-design/icons'
+
+export default function Footer ({active}) {
     return (
         <div
             style={{
@@ -12,7 +15,20 @@ export default function Footer () {
                 boxShadow: 'white 39px 20px 46px 83px'
             }}
         >
-            Footer
+            <Row justify='space-evenly' style={{height: '100%'}}>
+                <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
+                    <HomeOutlined className={`app-icon ${active=='home' ? 'active' : ''}`}/>
+                </Col>
+                 <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
+                    <UserOutlined className={`app-icon ${active=='user' ? 'active' : ''}`}/>
+                </Col>
+                 <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
+                    <MessageOutlined className={`app-icon ${active=='chat' ? 'active' : ''}`}/>
+                </Col>
+                 <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
+                    <SettingOutlined className={`app-icon ${active=='settings' ? 'active' : ''}`}/>
+                </Col>
+            </Row>
         </div>
     )
 }

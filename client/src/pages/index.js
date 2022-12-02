@@ -5,6 +5,7 @@ import History from './History'
 import Chat from './Chat'
 import Conversation from './Conversation'
 import SignIn from './SignIn'
+import Diagnosis from './Diagnosis'
 
 export {
     Home,
@@ -12,5 +13,6 @@ export {
     Chat,
     Conversation,
     SearchFoods, FoodDetail,
-    SignIn
+    SignIn,
+    Diagnosis
 }
