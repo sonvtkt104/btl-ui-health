@@ -15,7 +15,7 @@ function SearchFoods() {
     }
     
     return (
-        <div className='searchContainer'>
+        <div className='searchContainer' style={{background : '#f9fdff', backgroundColor : '#f9fdff'}}>
         <div className='searchContainer__box1'>
              <i className='iconF close'><FontAwesomeIcon icon={faClose} /></i>
              <div className='searchProduct'>

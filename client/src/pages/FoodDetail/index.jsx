@@ -26,22 +26,22 @@ function FoodDetail({data}) {
                 </div>
                 <div className='fdc__Index'>
                     <div className='fdc__Index__Info-Calories'>
-                        <div style={{color: "green", fontWeight: "bold", fontSize: "24px"}}>{data.foodCalories}</div>
+                        <div style={{color: "rgb(101, 188, 102)", fontWeight: "bold", fontSize: "24px"}}>{data.foodCalories}</div>
                         <div>Calories (g)</div>
                     </div>
 
                     <div className='fdc__Index__Info-Carbs'>
-                        <div style={{color: "red", fontWeight: "bold", fontSize: "24px"}}>{data.foodCarbs}</div>
+                        <div style={{color: "rgb(67, 165, 242)", fontWeight: "bold", fontSize: "24px"}}>{data.foodCarbs}</div>
                         <div>Carbs (g)</div>
                     </div>
 
                     <div className='fdc__Index__Info-Protein'>
-                        <div style={{color: "blue", fontWeight: "bold", fontSize: "24px"}}>{data.foodProtein}</div>
+                        <div style={{color: "rgb(229, 68, 122)", fontWeight: "bold", fontSize: "24px"}}>{data.foodProtein}</div>
                         <div>Protein (g)</div>
                     </div>
 
                     <div className='fdc__Index__Info-Fat'>
-                        <div style={{color: "orange", fontWeight: "bold", fontSize: "24px"}}>{data.foodFat}</div>
+                        <div style={{color: "rgb(254, 111, 70)", fontWeight: "bold", fontSize: "24px"}}>{data.foodFat}</div>
                         <div>Fat (g)</div>
                     </div>
                 </div>
