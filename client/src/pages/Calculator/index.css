@@ -1,0 +1,22 @@
+.calculator-detail {
+    position: fixed;
+    z-index: 2;
+    top: 100vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 0.35s linear;
+    opacity: 0;
+    background: #fff;
+}
+.calculator-detail.active {
+    top: 0;
+    opacity: 1;
+}
+.calculator {
+    opacity: 1;
+    transition: all 0.25s linear;
+}
+.calculator.active {
+    opacity: 0;
+}

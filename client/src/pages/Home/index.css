@@ -169,3 +169,6 @@
     border: 1px solid var(--color-blue);
     box-shadow: 0 0 4px var(--color-shadow);
 }
+.app-input-form input{
+    background: #ccc;
+}

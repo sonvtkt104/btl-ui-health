@@ -17,6 +17,9 @@ import {
 import './index.css'
 import iconFood from '../../assets/image/foodIcon.png'
 import chuoiTay from '../../assets/image/chuoitay.jpg'
+import suachua from '../../assets/image/suachuakhongduong.jpg'
+import thitlonnac from '../../assets/image/thitlonnac.jpg'
+import yenthach from '../../assets/image/yenthach.jpg'
 import { Footer } from '../../components'
 
 
@@ -130,7 +133,7 @@ export default function Home() {
                     <div className='meal' style={{padding: '20px 0'}}>
                         <span className='mealName' style={{fontSize:18, fontWeight:'bold', marginBottom: 15}}>Bữa sáng</ span>
                         <br/>
-                        <span className='calories'>33 kcal</span>
+                        <span className='calories'>138 kcal</span>
                         <div className='food'>
                             <div>
                                 <img className='foodImage' src={chuoiTay} />
@@ -139,6 +142,51 @@ export default function Home() {
                                 <span className='foodName'>Chuối tây</span>
                                 <br/>
                                 <span className='details'>33 kcal - 50 gram / ml</span>
+                            </div>
+                            <div className='infoIcon'>
+                                <InfoCircleOutlined />
+                            </div>
+                        </div>
+                        <div className='food'>
+                            <div>
+                                <img className='foodImage' src={suachua} />
+                            </div>
+                            <div className='foodInfo'>
+                                <span className='foodName'>Sữa chua không đường</span>
+                                <br/>
+                                <span className='details'>105 kcal - 100 gram / ml</span>
+                            </div>
+                            <div className='infoIcon'>
+                                <InfoCircleOutlined />
+                            </div>
+                        </div>
+
+                        {/* Bữa trưa */}
+                        <span className='mealName' style={{fontSize:18, fontWeight:'bold', marginBottom: 15}}>Bữa trưa</ span>
+                        <br/>
+                        <span className='calories'>138 kcal</span>
+
+                        <div className='food'>
+                            <div>
+                                <img className='foodImage' src={thitlonnac} />
+                            </div>
+                            <div className='foodInfo'>
+                                <span className='foodName'>Thịt lợn nạc</span>
+                                <br/>
+                                <span className='details'>236 kcal - 100 gram / ml</span>
+                            </div>
+                            <div className='infoIcon'>
+                                <InfoCircleOutlined />
+                            </div>
+                        </div>
+                        <div className='food'>
+                            <div>
+                                <img className='foodImage' src={yenthach} />
+                            </div>
+                            <div className='foodInfo'>
+                                <span className='foodName'>Yến thạch</span>
+                                <br/>
+                                <span className='details'>140 kcal - 40 gram / ml</span>
                             </div>
                             <div className='infoIcon'>
                                 <InfoCircleOutlined />

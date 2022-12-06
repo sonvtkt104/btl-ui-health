@@ -68,7 +68,7 @@
 
 .active {
     color: red;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 .borderLeft {

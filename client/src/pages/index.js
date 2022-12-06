@@ -4,8 +4,9 @@ import Home from './Home'
 import History from './History'
 import Chat from './Chat'
 import Conversation from './Conversation'
-import SignIn from './SignIn'
+import Start from './Start'
 import Diagnosis from './Diagnosis'
+import Calculator from './Calculator'
 
 export {
     Home,
@@ -13,6 +14,7 @@ export {
     Chat,
     Conversation,
     SearchFoods, FoodDetail,
-    SignIn,
-    Diagnosis
+    Start,
+    Diagnosis,
+    Calculator
 }
