@@ -4,10 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose, faQrcode, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { ButtonFood } from '../../components'
 import foods from '../../assets/data'
+import { ScanOutlined} from '@ant-design/icons'
+import {Link} from 'react-router-dom'
+import {Row, Col} from 'antd'
+
+const dataTypes = ['Tất cả', 'Món ăn của tôi', 'Bữa ăn'];
 
 function SearchFoods() {
     
     const [value, setValue] = useState('');
+    const [type, setType] = useState(0)
 
     function filterFoods(value) {
         return foods.filter(food => food.foodName.toLowerCase().includes(value));
@@ -17,7 +23,11 @@ function SearchFoods() {
     return (
         <div className='searchContainer' style={{background : '#f9fdff', backgroundColor : '#f9fdff'}}>
         <div className='searchContainer__box1'>
-             <i className='iconF close'><FontAwesomeIcon icon={faClose} /></i>
+             <Link
+                to="/home"
+             >
+                <i className='iconF close'><FontAwesomeIcon icon={faClose} /></i>
+             </Link>
              <div className='searchProduct'>
                 <i className='iconF'><FontAwesomeIcon icon={faSearch} /></i>
                 <input className='searchProduct__input'
@@ -25,24 +35,39 @@ function SearchFoods() {
                        value={value} 
                        onChange={e => setValue(e.target.value)} />
              </div>
-             <i className='iconF'><FontAwesomeIcon icon={faQrcode} /></i>
+             <ScanOutlined style={{fontSize: 20}}/>
         </div>
         <div className='searchContainer__box2'>
-            <button className='searchContainer__box2__button active'>Tất cả</button>
-            <div className='borderLeft'></div>
-            <button className='searchContainer__box2__button'>Món ăn của tôi</button>
-            <div className='borderLeft'></div>
-            <button className='searchContainer__box2__button'>Bữa ăn</button>
+            {
+                dataTypes.map((item, index) => (
+                    <span className={type == index ? 'active' : ''} key={index}
+                        onClick={() => {setType(index)}}
+                    >
+                        {item}
+                    </span>
+                ))
+            }
         </div>
         <div className='searchContainer__box3'>
-            <ul>
-                {
-                    filterFoods(value).length > 0 ? filterFoods(value).map((food) => (
-                        <li key={food.foodId}><ButtonFood data={food} /></li>
-                    )) : 'Không tìm thấy món ăn phù hợp!'
-                }
-            </ul>
-            
+            {
+                filterFoods(value).length > 0 ? (
+                    <ul>
+                        {
+                            filterFoods(value).map((food) => (
+                                <li key={food.foodId}><ButtonFood data={food} /></li>
+                            ))
+                        }
+                    </ul>
+                )
+                : (
+                    <div className='flex-col-center' style={{height: '100%'}}>
+                        <Col>
+                            <p style={{textAlign: 'center', color: 'grey', fontSize: '16px'}}>Không tìm thấy thực phẩm</p>
+                            <p style={{color: '#1890ff', fontWeight: 'bold', textAlign: 'center', fontSize: '16px', marginTop: 15, cursor: 'pointer'}}>Thêm sản phẩm mới</p>
+                        </Col>
+                    </div>
+                )
+            }
         </div>
      </div>
     )

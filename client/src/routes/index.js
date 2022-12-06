@@ -14,7 +14,7 @@ export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/tim-kiem-mon-an" element={<SearchFoods />} />
+                <Route path="/search" element={<SearchFoods />} />
                 {
                     foods.map(food => (
                         <Route key={food.foodId} path={"/chi-tiet-mon-an/" + food.foodId} element={<FoodDetail data={food} />} />

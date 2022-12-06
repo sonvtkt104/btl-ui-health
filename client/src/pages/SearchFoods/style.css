@@ -2,18 +2,21 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: var(--background-color);
-    padding: 4px 0;
+    padding: 130px 10px 20px;
+    height: 100vh;
+    overflow: auto;
 }
 
 .searchContainer__box1 {
-    width: 380px;
     height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 8px;
-    box-shadow: 0 0 4px var(--color-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
 }
 
 .searchContainer__box1 i {
@@ -43,15 +46,34 @@
 }
 
 .searchContainer__box2 {
-    width: 380px;
-    height: 40px;
-    padding: 2px;
+    width: 380px; 
+    height: 55px;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    box-shadow: 0 0 4px var(--color-shadow);
+    justify-content: space-evenly;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px 25px 0px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
 }
+.searchContainer__box2 span {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0 10px 10px;
+    font-weight: 600;
+    color: #6f6f6f;
+}
+.searchContainer__box2 span:hover {
+    /* color: #1890ff; */
+}
+.searchContainer__box2 span.active {
+    color: #1890ff;
+    border-bottom: 2px solid #1890ff;
+}
+
 
 .searchContainer__box2__button {
     height: 100%;
@@ -66,6 +88,12 @@
     background-color: #fff;
 }
 
+.searchContainer__box3 {
+    width: 100%;
+    padding: 0 10px;
+    height: 100%;
+}
+
 .active {
     color: red;
     /* background-color: #fff; */
@@ -76,17 +104,6 @@
     height: 15px;
     background-color: black;
     margin: auto;
-}
-
-.searchContainer__box3 {
-    width: 380px;
-    height: 100%;
-    padding: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 4px var(--color-shadow);
 }
 
 .iconF {

@@ -151,12 +151,11 @@
 .tips{
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 20px 15px;
     margin-bottom: 8px;
     border-radius: 10px;
-    border: 1px solid var(--color-primary);
+    border: 1px solid #ccc;
     border-style: dashed; 
-    box-shadow: 0 0 4px var(--color-shadow);
 }
 
 .commentary{
@@ -171,4 +170,14 @@
 }
 .app-input-form input{
     background: #ccc;
+}
+.ant-picker {
+    padding: 0;
+    border: none;
+}
+.ant-picker-input input {
+    display: none !important;
+}
+.ant-picker-input > span {
+    font-size: 20px !important;
 }

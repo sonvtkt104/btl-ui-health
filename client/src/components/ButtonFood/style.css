@@ -1,13 +1,13 @@
 .buttonFood{
     background-color: #fff;
-    width: 360px;
+    width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
     padding: 16px;
     border-radius: 16px;
-    margin-bottom: 8px;
-    box-shadow: 0px 0px 6px var(--color-shadow);
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 5px -1px var(--color-shadow);
     overflow: hidden;
     color: black;
     transition: 0.5s;
@@ -48,10 +48,11 @@
 .foodName{
     color: black;
     font-weight: bold;
+    margin-bottom : 5px;
 }
 
 .kcal{
-    color: var(--color-green);
+    color: #1890ff;
 }
 
 .circlePoint{
