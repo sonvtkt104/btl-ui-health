@@ -1,10 +1,14 @@
 import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faEllipsisVertical, faPersonBiking, faPersonRunning, faPersonWalking } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Col, Row, Select } from 'antd';
 
+const { Option } = Select
+
 function FoodDetail({data}) {
+
+    const navigate = useNavigate()
 
     const handleChange = (value) => {
         console.log(`selected ${value}`);
@@ -13,13 +17,13 @@ function FoodDetail({data}) {
     return (
         <div className='foodDetailContainer'>
             <div className='foodDetailContainer__header'>
-                <Link to={'/tim-kiem-mon-an'} className='back__searchFoods'>
+                <Link to={'/search'} className='back__searchFoods'>
                     <i><FontAwesomeIcon icon={faChevronLeft} /></i>
                 </Link>
                 <i><FontAwesomeIcon icon={faEllipsisVertical} /></i>
             </div>
 
-            <div className='foodDetailContainer__content'>
+            <div className='foodDetailContainer__content' style={{position: 'relative', paddingBottom: 70}}>
                 <div className='fdc'>
                     <img className='fdc__foodImg' src={data.foodImg} alt={'Hình ảnh món ăn'}></img>
                     <div className='fdc__foodName' style={{fontWeight: "bold", fontSize: "28px"}}>{data.foodName}</div>
@@ -27,92 +31,48 @@ function FoodDetail({data}) {
                 <div className='fdc__Index'>
                     <div className='fdc__Index__Info-Calories'>
                         <div style={{color: "rgb(101, 188, 102)", fontWeight: "bold", fontSize: "24px"}}>{data.foodCalories}</div>
-                        <div>Calories (g)</div>
+                        <div style={{color: "grey", marginTop: 5}}>Calories</div>
                     </div>
 
                     <div className='fdc__Index__Info-Carbs'>
                         <div style={{color: "rgb(67, 165, 242)", fontWeight: "bold", fontSize: "24px"}}>{data.foodCarbs}</div>
-                        <div>Carbs (g)</div>
+                        <div style={{color: "grey", marginTop: 5}}>Tinh bột</div>
                     </div>
 
                     <div className='fdc__Index__Info-Protein'>
                         <div style={{color: "rgb(229, 68, 122)", fontWeight: "bold", fontSize: "24px"}}>{data.foodProtein}</div>
-                        <div>Protein (g)</div>
+                        <div style={{color: "grey", marginTop: 5}}>Chất đạm</div>
                     </div>
 
                     <div className='fdc__Index__Info-Fat'>
                         <div style={{color: "rgb(254, 111, 70)", fontWeight: "bold", fontSize: "24px"}}>{data.foodFat}</div>
-                        <div>Fat (g)</div>
+                        <div style={{color: "grey", marginTop: 5}}>Chất béo</div>
                     </div>
                 </div>
                 <div className='fdc__Option'>
                     <div className='fdc__Option__inner'>
-                        <Row gutter={0} style={{padding: '0 0 0 8px' ,width: '100%'}} justify={'space-between'} align={'middle'}>
-                            Số lượng: <Col flex={'60px'}>
-                                <Select
-                                    defaultValue="1"
-                                    options={[
-                                        {
-                                            value: 1,
-                                            label: '1'
-                                        },
-                                        {
-                                            value: 2,
-                                            label: '2'
-                                        },
-                                        {
-                                            value: 3,
-                                            label: '3'
-                                        },
-                                        {
-                                            value: 4,
-                                            label: '4'
-                                        },
-                                        {
-                                            value: 5,
-                                            label: '5'
-                                        }
-                                    ]}
-                                    onChange={handleChange}
+                        <Row style={{padding: '0 0 0 8px' ,width: '100%'}}>
+                            <span style={{fontWeight: 'bold', marginRight: 5, lineHeight: '35px'}}>
+                                Số lượng: 
+                            </span>
+                            <span>
+                                <Select 
+                                    value={100}
+                                    style={{width: 100, fontWeight: "bold"}}
                                 >
+                                    <Option value={100}>100</Option>
+                                    <Option value={100}>200</Option>
+                                    <Option value={100}>300</Option>
+                                    <Option value={100}>400</Option>
+                                    <Option value={100}>500</Option>
                                 </Select>
-                            </Col>
-                            <Col flex={'auto'}>
-                                <Select
-                                    defaultValue="100 gram"
-                                    style={{
-                                        width: '100%',
-                                    }}
-                                    onChange={handleChange}
-                                    options={[
-                                        {
-                                            value: 100,
-                                            label: '100 gram'
-                                        },
-                                        {
-                                            value: 200,
-                                            label: '200 gram',
-                                        },
-                                        {
-                                            value: 300,
-                                            label: '300 gram',
-                                        },
-                                        {
-                                            value: 400,
-                                            label: '400 gram',
-                                        },
-                                        {
-                                            value: 500,
-                                            label: '500 gram',
-                                        }
-                                    ]}
-                                />
-                            </Col>
+                            </span>
+                            <span style={{lineHeight: '35px', color: 'grey', marginLeft: 10}}>gram / ml</span>
                         </Row>
                         
                         
                     </div>
-                    <div className='fdc__Option__Meal'>
+                    <div className='fdc__Option__Meal' style={{margin: '10px 0 20px'}}>
                         <Row>
                             <Col flex={'auto'}>
                                     <Select
@@ -121,58 +81,35 @@ function FoodDetail({data}) {
                                             width: '100%',
                                         }}
                                         onChange={handleChange}
-                                        options={[
-                                            {
-                                                value: 'Bữa sáng',
-                                                label: 'Bữa sáng'
-                                            },
-                                            {
-                                                value: 'Ăn nhẹ sau bữa sáng',
-                                                label: 'Ăn nhẹ sau bữa sáng',
-                                            },
-                                            {
-                                                value: 'Bữa trưa',
-                                                label: 'Bữa trưa',
-                                            },
-                                            {
-                                                value: 'Ăn nhẹ sau bữa trưa',
-                                                label: 'Ăn nhẹ sau bữa trưa',
-                                            },
-                                            {
-                                                value: 'Bữa tối',
-                                                label: 'Bữa tối',
-                                            },
-                                            {
-                                                value: 'Ăn nhẹ sau bữa tối',
-                                                label: 'Ăn nhẹ sau bữa tối',
-                                            },
-                                        ]}
-                                    />
+                                    >
+                                        <Option>Bữa sáng</Option>
+                                        <Option>Bữa trưa</Option>
+                                        <Option>Bữa tối</Option>
+                                        <Option>Bữa phụ</Option>
+                                    </Select>
                                 </Col>
                         </Row>
                     </div>
                 </div>
                 <div className='fdc__Details'>
                     <div className='fdc__Details__1'>
-                        <span>Sugars, total: </span> <span>0 g</span> <br />
-                        <span>Kilojoule: </span> <span>0 kJ</span> <br />
-                        <span>Calcium: </span> <span>0 mg</span> <br />
-                        <span>Magnesium: </span> <span>0 mg</span> <br />
-                        <span>Potassium: </span> <span>0 mg</span> <br />
-                        <span>Zinc: </span> <span>0 mg</span> <br />
-                        <span>Selenium: </span> <span>0 mg</span> <br />
+                        <span>Sugars, total: </span> <span>1,3 g</span> <br />
+                        <span>Kilojoule: </span> <span>343,2 kJ</span> <br />
+                        <span>Calcium: </span> <span>33,3 mg</span> <br />
+                        <span>Magnesium: </span> <span>7,3 mg</span> <br />
+                        <span>Potassium: </span> <span>35,7 mg</span> <br />
+                        <span>Zinc: </span> <span>0,8 mg</span> <br />
                     </div>
                     <div className='fdc__Details__2'>
                         <span>Alcohol: </span> <span>0 g</span> <br />
-                        <span>Fiber: </span> <span>0 g</span> <br />
-                        <span>Iron: </span> <span>0 mg</span> <br />
-                        <span>Phosphorus: </span> <span>0 mg</span> <br />
-                        <span>Sodium: </span> <span>0 mg</span> <br />
+                        <span>Fiber: </span> <span>0,7 g</span> <br />
+                        <span>Iron: </span> <span>0,9 mg</span> <br />
+                        <span>Phosphorus: </span> <span>28,8 mg</span> <br />
+                        <span>Sodium: </span> <span>132,7 mg</span> <br />
                         <span>Copper: </span> <span>0 mg</span> <br />
-                        <span className='showMore' style={{color: "green", fontWeight: "bold"}}>Show more</span> <br />
                     </div>
                 </div>
-                <p style={{color: "black", fontWeight: "bold", textAlign: "center", fontSize: "18px"}}>
+                {/* <p style={{color: "black", fontWeight: "bold", textAlign: "center", fontSize: "18px"}}>
                     Làm cách nào để đốt cháy <span>{data.foodCalories}</span> calories
                 </p>
                 <br />
@@ -189,8 +126,19 @@ function FoodDetail({data}) {
                         <i><FontAwesomeIcon style={{color: "green"}} icon={faPersonRunning} /></i>
                         <span>7 phút</span>
                     </div>
-                </div>
-                <button className='fdc__Button__Add'>Thêm vào nhật ký</button>
+                </div> */}
+                <button 
+                    className='fdc__Button__Add'
+                    style={{
+                        position: 'absolute',
+                        bottom: '15px'
+                    }}
+                    onClick={() => {
+                        navigate("/home")
+                    }}
+                >
+                    Thêm vào nhật ký
+                </button>
             </div>
         </div>
     )

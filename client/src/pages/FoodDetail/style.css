@@ -2,19 +2,25 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #effaff;
+    background-color: #f9fdff;
     height: 100vh;
-    overflow-x: auto;
-    padding: 4px 0;
+    overflow: auto;
+    padding: 70px 20px 20px;
 }
 .foodDetailContainer__header {
-    width: 380px;
-    height: 40px;
+    width: 100%;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4px 0px;
-    box-shadow: 0 0 2px var(--color-shadow);
+    /* padding: 4px 0px; */
+    /* box-shadow: 0 0 2px var(--color-shadow); */
+    position: fixed;
+    top: 0;
+    background: #fff;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #eee;
 }
 
 .foodDetailContainer__header i {
@@ -39,14 +45,10 @@
 }
 
 .foodDetailContainer__content {
-    width: 380px;
-    padding: 4px 4px 16px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 2px var(--color-shadow);
-    overflow: hidden;
-    overflow-y: scroll;
+    height: 100%;
 }
 .fdc {
     display: flex;
@@ -62,8 +64,11 @@
 }
 .fdc__Index {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 18px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10px;
 }
 .fdc__Index__Info-Calories,
 .fdc__Index__Info-Carbs,
@@ -84,7 +89,7 @@
 .fdc__Index__Info-Protein:hover,
 .fdc__Index__Info-Fat:hover
 {
-    background-color: rgb(192, 192, 228);
+    /* background-color: rgb(192, 192, 228); */
 }
 
 .fdc__Option {
@@ -181,4 +186,28 @@
     transform: scale(0.9);
     background-color: rgba(0,0,0,);
     opacity: 0.8;
+}
+.ant-select-dropdown {
+    padding: 4px 0 !important;
+}
+
+.ant-select-item {
+    background-color: #fff !important;
+    background: #fff !important;
+    padding: 3px 7px !important;
+    text-align:  center !important;
+}
+.ant-select-item-option-active,
+.ant-select-item:hover {
+    background-color: #eee !important;
+    background: #eee !important;
+}
+.ant-select-selector {
+    height: 35px !important;
+}
+.fdc__Details__1 span,
+.fdc__Details__2 span {
+    color: grey;
+    padding: 4px 0;
+    display: inline-flex;
 }
