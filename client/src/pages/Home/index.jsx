@@ -46,7 +46,9 @@ export default function Home() {
                 >
                     <span>{type}</span>
                     <span>
-                        <PlusCircleOutlined style={{cursor: 'pointer'}}/>
+                        <PlusCircleOutlined style={{cursor: 'pointer'}}
+                            onClick={() => {navigate("/search")}}
+                        />
                     </span>
                 </Row>
                 <p className='calories'>{calories} calories</p>

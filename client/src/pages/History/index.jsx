@@ -132,8 +132,8 @@ export default function History() {
     return (
         <div className="history">
             <div style={{position: 'fixed', background: 'white', top: '0', left: '0', right: 0, paddingBottom: 20, boxShadow: '1px 1px 20px 0px #d4d4d4'}}>
-                <Row justify='space-between' style={{padding: '30px 25px' }}>
-                    <h1 style={{fontSize: 18}}>Lịch sử</h1>
+                <Row justify='space-between' style={{padding: '50px 25px 30px' }}>
+                    <h1 style={{fontSize: 24}}>Lịch sử</h1>
                     <Row className='history-hover' style={{padding: '5px 10px', background: '#e5e5e5', borderRadius: 5, cursor: 'pointer', border: '0.5px solid grey'}}>
                         <VerticalAlignBottomOutlined style={{fontSize: 18}} />
                         <span style={{fontSize: 14, marginLeft: 5}}>Tải về</span>
@@ -148,7 +148,7 @@ export default function History() {
                     </Row>
                 </div>
             </div>
-            <div style = {{padding: '200px 25px 80px'}}>
+            <div style = {{padding: '210px 25px 80px'}}>
                 <div>
                     <Chart type='bar' data={data} options={options}/>
                     <Row justify='center' style={{margin: '15px 0'}}>

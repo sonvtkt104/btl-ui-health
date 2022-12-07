@@ -10,6 +10,8 @@ import {
 } from 'antd'
 import './index.css'
 import { Footer } from '../../components/index'
+import { useNavigate } from 'react-router-dom'
+import {useState, useEffect} from 'react'
 
 const data = [
     "Hiếu Văn",
@@ -21,6 +23,9 @@ const data = [
 
 
 export default function Chat () {
+
+    const navigate = useNavigate()
+
     return (
         <div
             // style={{
@@ -30,10 +35,10 @@ export default function Chat () {
             <Row justify='space-between' style={{ maxHeight: 100 ,padding: '50px 25px 30px 25px', borderBottom: '1px solid #eeeeee', position: 'fixed', background: 'white', top: 0, left: 0, right: 0, zIndex: '2'}}>
                 <Col>
                     <Row>
-                        <Col>
+                        {/* <Col>
                             <MenuOutlined style={{fontSize: 22, marginRight: 10}} />
-                        </Col>
-                        <Col style={{fontSize: 18, fontWeight: 'bold', lineHeight: '22px'}}>
+                        </Col> */}
+                        <Col style={{fontSize: 24, fontWeight: 'bold', lineHeight: '22px'}}>
                             Trò chuyện
                         </Col>
                     </Row>
@@ -87,7 +92,11 @@ export default function Chat () {
                     </Row>
                     {
                         Array.from(Array(5).keys()).map((item, i) => (
-                            <Row justify='space-between' style={{marginBottom: 20}}>
+                            <Row justify='space-between' style={{marginBottom: 20}}
+                                onClick={() => {
+                                    navigate("/message")
+                                }}
+                            >
                                 <Col xs={19}>
                                     <Row>
                                         <Col >
