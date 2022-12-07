@@ -3,7 +3,7 @@ import './style.css'
 
 export default function ButtonFood ({data}) {
     return (
-        <Link className='buttonFood' to={'/chi-tiet-mon-an/' + data.foodId}>
+        <Link className='buttonFood' to={'/food-detail/' + data.foodId}>
             <div className='containerImg'>
                 <img className='foodImg' src={data.foodImg} alt='Hình ảnh'></img>
             </div>

@@ -14,7 +14,8 @@ import {
     PlusOutlined,
     SettingOutlined,
     InfoCircleOutlined,
-    CloseCircleOutlined
+    CloseCircleOutlined,
+    PlusCircleOutlined
 } from '@ant-design/icons'
 import './index.css'
 import iconFood from '../../assets/image/foodIcon.png'
@@ -22,8 +23,9 @@ import chuoiTay from '../../assets/image/chuoitay.jpg'
 import suachua from '../../assets/image/suachuakhongduong.jpg'
 import thitlonnac from '../../assets/image/thitlonnac.jpg'
 import yenthach from '../../assets/image/yenthach.jpg'
-import { Footer } from '../../components'
+import { Footer, ItemFood } from '../../components'
 import {useState} from 'react'
+import foods from '../../assets/data'
 
 
 export default function Home() {
@@ -34,6 +36,23 @@ export default function Home() {
     const onChangeDate = (date, dateString) => {
         console.log(date, dateString);
     };
+
+    const headerMeal = (type, calories) => {
+        return (
+            <>
+                <Row className='mealName' 
+                    style={{fontSize:18, fontWeight:'bold', margin: '30px 0 7px', paddingRight: 7}}
+                    justify='space-between'
+                >
+                    <span>{type}</span>
+                    <span>
+                        <PlusCircleOutlined style={{cursor: 'pointer'}}/>
+                    </span>
+                </Row>
+                <p className='calories'>{calories} calories</p>
+            </>
+        )
+    }
 
     return (
         <div className='homeContainer' style={{position: 'relative'}}>
@@ -62,17 +81,17 @@ export default function Home() {
                         <Col style={{}}>Bạn vẫn có thể hấp thu 2.515 calories</Col>
                     </Row>
                     <Row>
-                        <Progress percent={5} showInfo={false} strokeColor="#65bc66" />
+                        <Progress percent={5} showInfo={false} strokeColor="#43a5f2" />
                     </Row>
                     <Row justify='space-between' style={{margin: '0px 0 15px'}}>
                         <Col style={{color: 'grey'}}>Đã tiêu thụ 33 calories</Col>
-                        <Col style={{fontWeight: 'bold'}}>Mục tiêu: <span style={{color: '#65bc66'}}>1.917</span></Col>
+                        <Col style={{fontWeight: 'bold'}}>Mục tiêu: <span style={{color: '#1890ff'}}>1.917</span></Col>
                     </Row>
                     <Row justify='space-between' style={{margin: '30px 0 10px'}}>
-                        <Col xs={8} style={{padding: '0 5px'}}>
+                        <Col xs={8} style={{padding: '0 5px', textAlign: 'center'}}>
                             <Progress 
                                 type="circle"
-                                strokeColor="#43a5f2"
+                                strokeColor="#65bc66"
                                 trailColor="#EDF1F5"
                                 strokeWidth={9}
                                 percent={10}
@@ -80,11 +99,11 @@ export default function Home() {
                                     return (
                                         <div style={{
                                             position: 'relative',
-                                            color: '#43a5f2',
+                                            color: '#65bc66',
                                             fontWeight: 'bold'
                                         }}>
                                             {percent}
-                                            <span style={{position: 'absolute', fontSize: 12, color: '#43a5f2'}}>
+                                            <span style={{position: 'absolute', fontSize: 12, color: '#65bc66'}}>
                                                 %
                                             </span>
                                         </div>
@@ -92,9 +111,9 @@ export default function Home() {
                                 }}
                                 width={80}
                             />
-                            <Row justify='center' style={{color:'#43a5f2', marginTop: 7, fontWeight: '600' }}>Tinh bột</Row>
+                            <Row justify='center' style={{color:'#65bc66', marginTop: 7, fontWeight: '600' }}>Tinh bột</Row>
                         </Col>
-                        <Col xs={8} style={{padding: '0 5px'}}>
+                        <Col xs={8} style={{padding: '0 5px', textAlign: 'center'}}>
                             <Progress 
                                 type="circle"
                                 strokeColor="#e5447a"
@@ -119,7 +138,7 @@ export default function Home() {
                             />
                             <Row justify='center' style={{color:'#e5447a', marginTop: 7, fontWeight: '600' }}>Chất đạm</Row>
                         </Col>
-                        <Col xs={8} style={{padding: '0 5px'}}>
+                        <Col xs={8} style={{padding: '0 5px', textAlign: 'center'}}>
                             <Progress 
                                 type="circle"
                                 strokeColor="#fe6f46"
@@ -147,41 +166,16 @@ export default function Home() {
                     </Row>
                 </div>
                 <div className='foodChoice'>
-                    <div className='meal' style={{padding: '20px 0'}}>
-                        <span className='mealName' style={{fontSize:18, fontWeight:'bold', marginBottom: 15}}>Bữa sáng</ span>
-                        <br/>
-                        <span className='calories'>138 kcal</span>
-                        <div className='food'>
-                            <div>
-                                <img className='foodImage' src={chuoiTay} />
-                            </div>
-                            <div className='foodInfo'>
-                                <span className='foodName'>Chuối tây</span>
-                                <br/>
-                                <span className='details'>33 kcal - 50 gram / ml</span>
-                            </div>
-                            <div className='infoIcon'>
-                                <InfoCircleOutlined />
-                            </div>
-                        </div>
-                        <div className='food'>
-                            <div>
-                                <img className='foodImage' src={suachua} />
-                            </div>
-                            <div className='foodInfo'>
-                                <span className='foodName'>Sữa chua không đường</span>
-                                <br/>
-                                <span className='details'>105 kcal - 100 gram / ml</span>
-                            </div>
-                            <div className='infoIcon'>
-                                <InfoCircleOutlined />
-                            </div>
-                        </div>
+                    <div className='meal' style={{padding: '0 0 20px 0'}}>
+                        {headerMeal('Bữa sáng', 133)}
+                        {
+                            foods.map((item, i) => (
+                                <ItemFood key={i} data={item}/>
+                            ))
+                        }
 
                         {/* Bữa trưa */}
-                        <span className='mealName' style={{fontSize:18, fontWeight:'bold', marginBottom: 15}}>Bữa trưa</ span>
-                        <br/>
-                        <span className='calories'>138 kcal</span>
+                        {headerMeal("Bữa trưa", 12)}
 
                         <div className='food'>
                             <div>
@@ -294,7 +288,7 @@ export default function Home() {
                     padding: 17,
                     borderRadius: '50%',
                     background: 'linear-gradient(#7fd8ff, #00b4ff)',
-                    zIndex: 9, 
+                    zIndex: 99, 
                     fontSize: 22,
                     cursor: 'pointer'
                 }} 

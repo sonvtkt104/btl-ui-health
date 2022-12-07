@@ -12,8 +12,8 @@
     color: black;
     transition: 0.5s;
 }
-
-/* .buttonFood:hover {
+/* 
+.buttonFood:hover {
     background-color: var(--color-blue);
     cursor: pointer;
     color: var(--color-white);
@@ -63,6 +63,3 @@
     margin: 0 8px;
 }
 
-.type{
-
-}

@@ -7,6 +7,7 @@ import Conversation from './Conversation'
 import Start from './Start'
 import Diagnosis from './Diagnosis'
 import Calculator from './Calculator'
+import QuickTest from './QuickTest'
 
 export {
     Home,
@@ -16,5 +17,6 @@ export {
     SearchFoods, FoodDetail,
     Start,
     Diagnosis,
-    Calculator
+    Calculator,
+    QuickTest
 }

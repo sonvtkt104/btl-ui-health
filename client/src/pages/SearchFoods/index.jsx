@@ -16,7 +16,7 @@ function SearchFoods() {
     const [type, setType] = useState(0)
 
     function filterFoods(value) {
-        return foods.filter(food => food.foodName.toLowerCase().includes(value));
+        return foods.filter(food => food.foodName.toLowerCase().includes(value.toLowerCase()));
         // alert("Young ._. Boy");
     }
     

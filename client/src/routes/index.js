@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { SearchFoods, FoodDetail, Diagnosis, Calculator} from '../pages'
+import { SearchFoods, FoodDetail, Diagnosis, Calculator, QuickTest} from '../pages'
 import foods from '../assets/data'
 import { 
     Home,
@@ -17,7 +17,7 @@ export default function Router() {
                 <Route path="/search" element={<SearchFoods />} />
                 {
                     foods.map(food => (
-                        <Route key={food.foodId} path={"/chi-tiet-mon-an/" + food.foodId} element={<FoodDetail data={food} />} />
+                        <Route key={food.foodId} path={"/food-detail/" + food.foodId} element={<FoodDetail data={food} />} />
                     ))
                 }
                 <Route path="/home" element={<Home />} />
@@ -27,7 +27,8 @@ export default function Router() {
                 <Route path="/message" element={<Conversation />} />
                 <Route path="/diagnosis" element={<Diagnosis />} />
                 <Route path="/quick-info" element={<QuickInfo />} />
-                <Route path="/calculator" element={<Calculator />} />
+                <Route path="/calculator" element={<Calculator />} /><Route path="/calculator" element={<Calculator />} />
+                <Route path="/quick-test" element={<QuickTest />} />
 
             </Routes>
         </BrowserRouter>

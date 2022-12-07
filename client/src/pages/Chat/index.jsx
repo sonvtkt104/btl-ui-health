@@ -116,7 +116,7 @@ export default function Chat () {
                         padding: 17,
                         borderRadius: '50%',
                         background: 'linear-gradient(#7fd8ff, #00b4ff)',
-                        zIndex: 9, 
+                        zIndex: 99, 
                         fontSize: 22
                     }} 
                 />

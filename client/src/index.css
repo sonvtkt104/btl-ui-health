@@ -203,3 +203,22 @@ Room
   background: var(--color-new-bg);
   background-color: var(--color-new-bg);
 }
+
+.icon-grey svg {
+  fill: grey;
+}
+.ant-select-selector {
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+}
+.ant-input:focus {
+  border: 1px solid #ccc !important;
+  /* box-shadow: none !important; */
+}
+.ant-tabs .ant-tabs-tab+.ant-tabs-tab {
+  margin-left: 20px !important;
+}
+.ant-tabs .ant-tabs-tab div{
+  font-weight: bold;
+  color: grey;
+}

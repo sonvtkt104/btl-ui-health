@@ -181,3 +181,7 @@
 .ant-picker-input > span {
     font-size: 20px !important;
 }
+.calories {
+    margin-bottom: 10px;
+    color: #1890ff;
+}

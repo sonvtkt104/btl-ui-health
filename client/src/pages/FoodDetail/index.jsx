@@ -17,9 +17,13 @@ function FoodDetail({data}) {
     return (
         <div className='foodDetailContainer'>
             <div className='foodDetailContainer__header'>
-                <Link to={'/search'} className='back__searchFoods'>
+                <span className='back__searchFoods'
+                    onClick={() => {
+                        navigate(-1)
+                    }}
+                >
                     <i><FontAwesomeIcon icon={faChevronLeft} /></i>
-                </Link>
+                </span>
                 <i><FontAwesomeIcon icon={faEllipsisVertical} /></i>
             </div>
 

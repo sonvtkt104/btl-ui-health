@@ -30,7 +30,7 @@ export default function Calculator () {
                 </p>
                 <p style={{color: 'grey', fontSize: 12, margin: '20px 0 50px'}}>Để đạt chuẩn độ dinh dưỡng mỗi ngày, chúng tôi đã xây dựng kế hoạch dinh dưỡng hằng ngày này cho bạn</p>
 
-                <p style={{fontSize: 32, fontWeight: '700', color: '#65bc66'}}>1923</p>
+                <p style={{fontSize: 32, fontWeight: '700', color: '#43a5f2'}}>1923</p>
                 <p style={{color: 'grey', fontSize: 12, margin: '10px 0 30px'}}>Lượng calories cần đạt</p>
                 <div style={{textAlign: 'left'}}>
                     <div>
@@ -38,7 +38,7 @@ export default function Calculator () {
                             <Col style={{marginRight: 15}}>
                                 <Progress 
                                     type="circle"
-                                    strokeColor="#43a5f2"
+                                    strokeColor="#65bc66"
                                     trailColor="#EDF1F5"
                                     strokeWidth={9}
                                     percent={60}
@@ -46,11 +46,11 @@ export default function Calculator () {
                                         return (
                                             <div style={{
                                                 position: 'relative',
-                                                color: '#43a5f2',
+                                                color: '#65bc66',
                                                 fontWeight: 'bold'
                                             }}>
                                                 {percent}
-                                                <span style={{position: 'absolute', fontSize: 12, color: '#43a5f2'}}>
+                                                <span style={{position: 'absolute', fontSize: 12, color: '#65bc66'}}>
                                                     %
                                                 </span>
                                             </div>

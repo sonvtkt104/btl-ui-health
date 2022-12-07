@@ -11,6 +11,7 @@ export default function Footer ({active}) {
                 left: 0,
                 right: 0,
                 height: 80,
+                zIndex: 10,
                 borderTop: '1px solid #f2f2f2',
                 boxShadow: 'white 39px 20px 46px 83px'
             }}
