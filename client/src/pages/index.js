@@ -8,6 +8,8 @@ import Start from './Start'
 import Diagnosis from './Diagnosis'
 import Calculator from './Calculator'
 import QuickTest from './QuickTest'
+import Exercise from './Exercise'
+import Settings from './Settings'
 
 export {
     Home,
@@ -18,5 +20,7 @@ export {
     Start,
     Diagnosis,
     Calculator,
-    QuickTest
+    QuickTest,
+    Exercise,
+    Settings
 }

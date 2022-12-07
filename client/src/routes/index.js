@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { SearchFoods, FoodDetail, Diagnosis, Calculator, QuickTest} from '../pages'
+import { SearchFoods, FoodDetail, Diagnosis, Calculator, QuickTest, Settings} from '../pages'
 import foods from '../assets/data'
 import { 
     Home,
     History,
     Chat,
     Conversation,
-    Start
+    Start,
+    Exercise
 } from '../pages'
 import QuickInfo from '../pages/QuickInfo'
 
@@ -29,7 +30,8 @@ export default function Router() {
                 <Route path="/quick-info" element={<QuickInfo />} />
                 <Route path="/calculator" element={<Calculator />} /><Route path="/calculator" element={<Calculator />} />
                 <Route path="/quick-test" element={<QuickTest />} />
-
+                <Route path="/exercise" element={<Exercise />} />
+                <Route path="/settings" element={<Settings />} />
             </Routes>
         </BrowserRouter>
     )

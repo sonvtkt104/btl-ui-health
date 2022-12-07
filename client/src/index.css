@@ -227,3 +227,14 @@ Room
   transition: all 0.2s linear;
   transform: scale(1.5);
 }
+.app-icon-fontawesome.active svg {
+  position: relative;
+  transition: all 0.2s linear;
+  transform: scale(1.5);
+}
+.app-icon-fontawesome.active svg path {
+  fill: #1890ff;
+}
+.app-icon-fontawesome svg path {
+  fill: #001812;
+}

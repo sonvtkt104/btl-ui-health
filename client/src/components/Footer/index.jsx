@@ -1,6 +1,8 @@
 import {Row, Col} from 'antd'
 import { Link } from 'react-router-dom'
 import {BarChartOutlined, ThunderboltOutlined, HomeOutlined, UserOutlined, MessageOutlined, SettingOutlined} from '@ant-design/icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer ({active}) {
     return (
@@ -40,11 +42,15 @@ export default function Footer ({active}) {
                     </Link>
                 </Col>
                  <Col style={{textAlign: 'center', flexBasis: '20%'}}>
-                    <Link to="/settings" className='flex-col-center' style={{height: '100%'}}>
-                        <SettingOutlined className={`app-icon ${active=='settings' ? 'active' : ''}`}/>
+                    <Link to="/exercise" className='flex-col-center' style={{height: '100%'}}>
+                        <span style={{fontSize: 22}} className={`app-icon-fontawesome ${active == 'exercise' ? 'active' : ''}`}>
+                            <i>
+                                <FontAwesomeIcon icon={faDumbbell} />
+                            </i>
+                        </span>
+                        {/* <SettingOutlined className={`app-icon ${active=='settings' ? 'active' : ''}`}/> */}
                     </Link>
                 </Col>
-                
             </Row>
         </div>
     )

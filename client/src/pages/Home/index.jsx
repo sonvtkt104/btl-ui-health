@@ -15,7 +15,8 @@ import {
     SettingOutlined,
     InfoCircleOutlined,
     CloseCircleOutlined,
-    PlusCircleOutlined
+    PlusCircleOutlined,
+    BellOutlined
 } from '@ant-design/icons'
 import './index.css'
 import iconFood from '../../assets/image/foodIcon.png'
@@ -73,6 +74,14 @@ export default function Home() {
                                 <Col>
                                     {/* <CalendarOutlined style={{fontSize: 22, marginRight: 10}} /> */}
                                     <DatePicker onChange={() => onChangeDate()} />
+                                </Col>
+                                <Col>
+                                    <BellOutlined style={{fontSize: 22, marginLeft: 15}}/>
+                                </Col>
+                                <Col>
+                                    <Link to='/settings'>
+                                        <SettingOutlined style={{fontSize: 22, marginLeft: 15}}/>
+                                    </Link>
                                 </Col>
                             </Row>
                         </Col>
