@@ -492,7 +492,7 @@ export default function QuickTest() {
                 ) : ""
             }
             
-            <Footer />
+            <Footer active='quick-test'/>
         </div>
     )
 }

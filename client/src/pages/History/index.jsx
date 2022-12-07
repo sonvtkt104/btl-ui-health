@@ -286,7 +286,7 @@ export default function History() {
                     </Row>
                 </div>
             </div>
-            <Footer />
+            <Footer active='history'/>
         </div>
     )
 }

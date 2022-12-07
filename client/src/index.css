@@ -222,3 +222,8 @@ Room
   font-weight: bold;
   color: grey;
 }
+.app-footer .app-icon.active svg {
+  position: relative;
+  transition: all 0.2s linear;
+  transform: scale(1.5);
+}

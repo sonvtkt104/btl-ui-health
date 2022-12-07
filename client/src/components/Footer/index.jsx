@@ -1,5 +1,6 @@
 import {Row, Col} from 'antd'
-import {HomeOutlined, UserOutlined, MessageOutlined, SettingOutlined} from '@ant-design/icons'
+import { Link } from 'react-router-dom'
+import {BarChartOutlined, ThunderboltOutlined, HomeOutlined, UserOutlined, MessageOutlined, SettingOutlined} from '@ant-design/icons'
 
 export default function Footer ({active}) {
     return (
@@ -15,20 +16,35 @@ export default function Footer ({active}) {
                 borderTop: '1px solid #f2f2f2',
                 boxShadow: 'white 39px 20px 46px 83px'
             }}
+            className='app-footer'
         >
             <Row justify='space-evenly' style={{height: '100%'}}>
-                <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
-                    <HomeOutlined className={`app-icon ${active=='home' ? 'active' : ''}`}/>
+                <Col style={{textAlign: 'center', flexBasis: '20%'}}>
+                    <Link to='/history' className='flex-col-center' style={{height: '100%'}}>
+                        <BarChartOutlined className={`app-icon ${active=='history' ? 'active' : ''}`}/>
+                    </Link>
                 </Col>
-                 <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
-                    <UserOutlined className={`app-icon ${active=='user' ? 'active' : ''}`}/>
+                <Col style={{textAlign: 'center', flexBasis: '20%'}}>
+                    <Link to="/quick-test" className='flex-col-center' style={{height: '100%'}}>
+                        <ThunderboltOutlined className={`app-icon ${active=='quick-test' ? 'active' : ''}`}/>
+                    </Link>
                 </Col>
-                 <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
-                    <MessageOutlined className={`app-icon ${active=='chat' ? 'active' : ''}`}/>
+                <Col style={{textAlign: 'center', flexBasis: '20%'}}>
+                    <Link to="/home" className='flex-col-center' style={{height: '100%'}}>
+                        <HomeOutlined className={`app-icon ${active=='home' ? 'active' : ''}`}/>
+                    </Link>
                 </Col>
-                 <Col className='flex-col-center' xs={6} style={{textAlign: 'center'}}>
-                    <SettingOutlined className={`app-icon ${active=='settings' ? 'active' : ''}`}/>
+                 <Col style={{textAlign: 'center', flexBasis: '20%'}}>
+                    <Link to="/chat" className='flex-col-center' style={{height: '100%'}}>
+                        <MessageOutlined className={`app-icon ${active=='chat' ? 'active' : ''}`}/>
+                    </Link>
                 </Col>
+                 <Col style={{textAlign: 'center', flexBasis: '20%'}}>
+                    <Link to="/settings" className='flex-col-center' style={{height: '100%'}}>
+                        <SettingOutlined className={`app-icon ${active=='settings' ? 'active' : ''}`}/>
+                    </Link>
+                </Col>
+                
             </Row>
         </div>
     )
