@@ -8,6 +8,7 @@ import {
     Conversation,
     SignIn
 } from '../pages'
+import AddMyFood from '../pages/AddMyFood'
 
 export default function Router() {
     return (
@@ -24,6 +25,7 @@ export default function Router() {
                 <Route path="/history" element={<History />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/message" element={<Conversation />} />
+                <Route path='/tim-kiem-mon-an/addmyfood' element={<AddMyFood />} />
             </Routes>
         </BrowserRouter>
     )
