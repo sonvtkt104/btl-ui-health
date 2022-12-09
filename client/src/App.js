@@ -3,7 +3,7 @@ import { Header, Footer } from "./components";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app" style={{maxWidth: 520, margin: "auto"}}>
       {/* <Header /> */}
       <Router />
       {/* <Footer /> */}

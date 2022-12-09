@@ -1,17 +1,11 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins' sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 :root{
   --main-color: #001812;
@@ -32,6 +26,7 @@ code {
   --color-shadow: #cacaca;
   --color-border: #e7e7e7;
   --color-white: rgb(246, 246, 247);
+  --color-new-bg: #f9fdff;
 }
 
 * {
@@ -71,6 +66,11 @@ a:hover{
 .flex-col{
   display: flex;
   flex-direction: column;
+}
+.flex-col-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /*=======================
 Room
@@ -191,4 +191,50 @@ Room
   position: absolute;
   top: 50px;
   right: 50px;
+}
+.app-icon {
+  font-size: 22px;
+}
+.app-icon.active svg{
+  fill: #1890ff;
+  font-size: 24;
+}
+.app-bg-color {
+  background: var(--color-new-bg);
+  background-color: var(--color-new-bg);
+}
+
+.icon-grey svg {
+  fill: grey;
+}
+.ant-select-selector {
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+}
+.ant-input:focus {
+  border: 1px solid #ccc !important;
+  /* box-shadow: none !important; */
+}
+.ant-tabs .ant-tabs-tab+.ant-tabs-tab {
+  margin-left: 20px !important;
+}
+.ant-tabs .ant-tabs-tab div{
+  font-weight: bold;
+  color: grey;
+}
+.app-footer .app-icon.active svg {
+  position: relative;
+  transition: all 0.2s linear;
+  transform: scale(1.5);
+}
+.app-icon-fontawesome.active svg {
+  position: relative;
+  transition: all 0.2s linear;
+  transform: scale(1.5);
+}
+.app-icon-fontawesome.active svg path {
+  fill: #1890ff;
+}
+.app-icon-fontawesome svg path {
+  fill: #001812;
 }

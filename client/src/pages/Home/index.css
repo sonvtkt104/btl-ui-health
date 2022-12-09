@@ -1,0 +1,187 @@
+:root {
+    --color-start: #FFB721;
+    --color-blue: #1890ff;
+    --color-blue-light: #b1e3ff;
+    --color-yellow: #FFAA33;
+    --color-red: #FF3333;
+    --color-orange: #FF725E;
+    --color-orange-light: #FF8D7C;
+    --color-green: #00CC66;
+    --color-primary: #38383A;
+    --background-color: rgb(246, 246, 247);
+    --color-shadow: #cacaca;
+    --color-border: #e7e7e7;
+    --color-white: rgb(246, 246, 247);
+  }
+  
+
+.homeContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    padding: 4px 0;
+}
+
+.diaryContainer{
+    display: block;
+    padding: 110px 20px;
+    background: #f9fdff;
+}
+
+.userContainer{
+    display: none;
+}
+
+.meal{
+    padding: 20px;
+}
+
+.food{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 1px 3px 10px -1px #cecece;
+    padding: 13px;
+    width: 100%;
+    margin: 20px 0px;
+    height: 60px;
+}
+
+.foodImage{
+    max-height: 100%;
+}
+
+.diaryHeader, .userHeader{
+    width: 380px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.stats{
+    width: 380px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #b1e3ff;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+}
+
+.icon{
+    border-radius: 20px;
+}
+
+.measurement{
+    padding: 10px;
+    border-bottom: 50px;
+}
+
+.measurement span{
+    color:#1e5f9b;
+}
+
+.startStats, .currentStats, .goalStats{
+    width: 70%;
+    align-items: center;
+    background-color: #1c5187;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+
+.startStats span, .currentStats span, .goalStats span{
+    color:#e7e7e7;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 380px;
+    bottom: 0;
+    border-top: 3px var(--color-shadow);
+    background-color: #e7e7e7;
+}
+
+.addFood{
+    display: flex;
+    border-bottom: 30px;
+    right: 0px;
+}
+
+.addButton{
+    width: 44px;
+    height: 44px;    
+    border-radius: 9999px;
+    background-color: var(--color-blue);
+    cursor: pointer;
+}
+
+.buttonList{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.diary, .me{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.8s;
+    width: 80px;
+    border-radius: 12px;
+}
+
+.chart{
+
+}
+
+.tips{
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    border-style: dashed; 
+}
+
+.commentary{
+    width: 380px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--color-blue);
+    box-shadow: 0 0 4px var(--color-shadow);
+}
+.app-input-form input{
+    background: #ccc;
+}
+.ant-picker {
+    padding: 0;
+    border: none;
+}
+.ant-picker-input input {
+    display: none !important;
+}
+.ant-picker-input > span {
+    font-size: 20px !important;
+}
+.calories {
+    margin-bottom: 10px;
+    color: #1890ff;
+}

@@ -88,7 +88,7 @@ const data = {
         {
           type: 'line',
           label: 'Carbs',
-          borderColor: '#43a5f2',
+          borderColor: '#65bc66',
           borderWidth: 2,
           fill: false,
           data: labels.map(() => Math.random() * 100),
@@ -114,7 +114,7 @@ const data = {
         {
           type: 'bar',
           label: 'Calories',
-          backgroundColor: '#65bc66',
+          backgroundColor: '#43a5f2',
           data: labels.map(() => Math.random() * 100),
           borderColor: 'white',
           borderWidth: 7,
@@ -132,11 +132,11 @@ export default function History() {
     return (
         <div className="history">
             <div style={{position: 'fixed', background: 'white', top: '0', left: '0', right: 0, paddingBottom: 20, boxShadow: '1px 1px 20px 0px #d4d4d4'}}>
-                <Row justify='space-between' style={{padding: '30px 25px' }}>
-                    <h1 style={{fontSize: 18}}>History</h1>
+                <Row justify='space-between' style={{padding: '50px 25px 30px' }}>
+                    <h1 style={{fontSize: 24}}>Lịch sử</h1>
                     <Row className='history-hover' style={{padding: '5px 10px', background: '#e5e5e5', borderRadius: 5, cursor: 'pointer', border: '0.5px solid grey'}}>
                         <VerticalAlignBottomOutlined style={{fontSize: 18}} />
-                        <span style={{fontSize: 14, marginLeft: 5}}>Export</span>
+                        <span style={{fontSize: 14, marginLeft: 5}}>Tải về</span>
                     </Row>
                 </Row>
                 <div className="history-content">
@@ -148,13 +148,13 @@ export default function History() {
                     </Row>
                 </div>
             </div>
-            <div style = {{padding: '200px 25px 80px'}}>
+            <div style = {{padding: '210px 25px 80px'}}>
                 <div>
                     <Chart type='bar' data={data} options={options}/>
                     <Row justify='center' style={{margin: '15px 0'}}>
                         <Col>
                             <Row>
-                                <Col style={{ marginRight: 5,width: 40, height: 18, background: 'var(--green)' ,borderRadius: '5px'}}></Col>
+                                <Col style={{ marginRight: 5,width: 40, height: 18, background: 'var(--blue)' ,borderRadius: '5px'}}></Col>
                                 <Col>Calories</Col>
                             </Row>
                         </Col>
@@ -162,32 +162,32 @@ export default function History() {
                     <Row justify='space-between' style={{padding: '0 10px' }}>
                         <Col>
                             <Row>
-                                <Col style={{ marginRight: 5,width: 40, height: 2, background: 'var(--blue)' ,borderRadius: '5px', marginTop: 8}}></Col>
-                                <Col>Carbs</Col>
+                                <Col style={{ marginRight: 5,width: 30, height: 2, background: 'var(--green)' ,borderRadius: '5px', marginTop: 8}}></Col>
+                                <Col>Tinh bột</Col>
                             </Row>
                         </Col>
                         <Col>
                             <Row>
-                                <Col style={{ marginRight: 5,width: 40, height: 2, background: 'var(--pink)' ,borderRadius: '5px', marginTop: 8}}></Col>
-                                <Col>Protein</Col>
+                                <Col style={{ marginRight: 5,width: 30, height: 2, background: 'var(--pink)' ,borderRadius: '5px', marginTop: 8}}></Col>
+                                <Col>Chất đạm</Col>
                             </Row>
                         </Col>
                         <Col>
                             <Row>
-                                <Col style={{ marginRight: 5,width: 40, height: 2, background: 'var(--orange)' ,borderRadius: '5px', marginTop: 8}}></Col>
-                                <Col>Fat</Col>
+                                <Col style={{ marginRight: 5,width: 30, height: 2, background: 'var(--orange)' ,borderRadius: '5px', marginTop: 8}}></Col>
+                                <Col>Chất béo</Col>
                             </Row>
                         </Col>
                     </Row>
                     <Row
                         style={{margin: '30px 0', fontSize: 16, fontWeight: 'bold'}}
                     >
-                        Weekly details
+                        Chi tiết hàng tuần
                     </Row>
                     <Row justify='space-between'>
                         <Progress 
                             type="circle"
-                            strokeColor="#43a5f2"
+                            strokeColor="#65bc66"
                             trailColor="#EDF1F5"
                             strokeWidth={9}
                             percent={30}
@@ -195,11 +195,11 @@ export default function History() {
                                 return (
                                     <div style={{
                                         position: 'relative',
-                                        color: '#43a5f2',
+                                        color: '#65bc66',
                                         fontWeight: 'bold'
                                     }}>
                                         {percent}
-                                        <span style={{position: 'absolute', fontSize: 12, color: '#43a5f2'}}>
+                                        <span style={{position: 'absolute', fontSize: 12, color: '#65bc66'}}>
                                             %
                                         </span>
                                     </div>
@@ -257,12 +257,12 @@ export default function History() {
                         <Col style={{fontWeight: 'bold', fontSize: 16}}>14%</Col>
                     </Row>
                     <Row>
-                        <Progress percent={50} showInfo={false} strokeColor="#65bc66" />
+                        <Progress percent={50} showInfo={false} strokeColor="#43a5f2" />
                     </Row>
                     <Row style={{padding: '15px 0'}}>
-                        <Col xs={8} style={{fontWeight: 'bold'}}>Daily average</Col>
-                        <Col xs={8} style={{fontWeight: 'bold'}}>Goal</Col>
-                        <Col xs={8} style={{fontWeight: 'bold'}}>Intake</Col>
+                        <Col xs={8} style={{fontWeight: 'bold'}}>Hằng ngày</Col>
+                        <Col xs={8} style={{fontWeight: 'bold'}}>Mục tiêu</Col>
+                        <Col xs={8} style={{fontWeight: 'bold'}}>Hoàn thành</Col>
                     </Row>
                     <Row style={{padding: '5px 0'}}>
                         <Col xs={8} style={{color: '#454545'}}>Calories</Col>
@@ -270,23 +270,23 @@ export default function History() {
                         <Col xs={8} style={{color: '#454545'}}>345 kcal</Col>
                     </Row>
                     <Row style={{padding: '5px 0'}}>
-                        <Col xs={8} style={{color: '#454545'}}>Carbohydrates</Col>
+                        <Col xs={8} style={{color: '#454545'}}>Tinh bột</Col>
                         <Col xs={8} style={{color: '#454545'}}>377 g</Col>
                         <Col xs={8} style={{color: '#454545'}}>33 g</Col>
                     </Row>
                     <Row style={{padding: '5px 0'}}>
-                        <Col xs={8} style={{color: '#454545'}}>Protein</Col>
+                        <Col xs={8} style={{color: '#454545'}}>Chất đạm</Col>
                         <Col xs={8} style={{color: '#454545'}}>125 g</Col>
                         <Col xs={8} style={{color: '#454545'}}>89 g</Col>
                     </Row>
                     <Row style={{padding: '5px 0 80px 0'}}>
-                        <Col xs={8} style={{color: '#454545'}}>Fat</Col>
+                        <Col xs={8} style={{color: '#454545'}}>Chất béo</Col>
                         <Col xs={8} style={{color: '#454545'}}>66 g</Col>
                         <Col xs={8} style={{color: '#454545'}}>12 g</Col>
                     </Row>
                 </div>
             </div>
-            <Footer />
+            <Footer active='history'/>
         </div>
     )
 }

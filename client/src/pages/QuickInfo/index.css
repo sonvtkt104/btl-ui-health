@@ -1,0 +1,39 @@
+.quick-info {
+    padding: 50px 20px 30px;
+}
+.quick-step {
+    justify-content: center;
+    height: 20px;
+}
+.quick-step div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(189, 189, 189);
+    margin: 0 5px;
+    margin-top: 6px;
+}
+/* .quick-step div:hover {
+    background-color: #1890ff;
+} */
+.quick-step div.active {
+    background-color: #1890ff;
+}
+.quick-left svg{
+    fill: grey;
+}
+.quick-question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    text-align: center;
+}
+.quick-sex.active {
+    background-color: #b1e3ff;
+}
+/* .quick-sex:hover {
+    background-color: #b1e3ff;
+    color: #494949 !important;
+} */

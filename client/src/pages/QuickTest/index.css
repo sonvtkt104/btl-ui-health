@@ -1,0 +1,43 @@
+.quick-test-step {
+    justify-content: center;
+    height: 36px;
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.quick-test-step span {
+    position: relative;
+    z-index: 1;
+}
+.quick-test-step span::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    top: 21px;
+    left: 25px;
+    right: 25px;
+    background: #ccc;
+    z-index: -1;
+}
+.quick-test-step div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(189, 189, 189);
+    margin: 0 20px;
+    margin-top: 6px;
+    line-height: 30px;
+    text-align: center;
+}
+.quick-test-step div.active {
+    background-color: #1890ff;
+    color: #fff;
+}
+.quick-test-step-content {
+    width: 100%;
+    border-radius: 15px;
+    background-color: white;
+    padding: 30px 20px 10px 20px;
+}
