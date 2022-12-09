@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose, faPlus, faQrcode, faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -32,28 +32,22 @@ function SearchFoods() {
     let navigate = useNavigate(); 
     const routeChange = () => { 
         let path = ``; 
-        if(change === 'myfood') {
+        if(dataTypes[type] === 'Món ăn của tôi') {
             path = `addmyfood`;
             navigate(path);
         }
-        else if(change === 'meal') {
+        else if(dataTypes[type] === 'Bữa ăn') {
             path = `addmeal`;
             navigate(path);
         }
     }
   
-    const [change, setChange] = useState('all');
-
     const [value, setValue] = useState('');
     const [type, setType] = useState(0)
 
     function filterFoods(value) {
         return foods.filter(food => food.foodName.toLowerCase().includes(value.toLowerCase()));
         // alert("Young ._. Boy");
-    }
-
-    function handleEvent(e) {
-        setChange(e.target.value);
     }
     
     return (
@@ -71,7 +65,9 @@ function SearchFoods() {
                        value={value} 
                        onChange={e => setValue(e.target.value)} />
              </div>
-             <ScanOutlined style={{fontSize: 20}}/>
+             {
+                dataTypes[type] === "Tất cả" ? <ScanOutlined style={{fontSize: 20}}/> : <i className='iconF' onClick={routeChange}><FontAwesomeIcon icon={faPlus} /></i>
+             }  
         </div>
         <div className='searchContainer__box2'>
             {
@@ -84,43 +80,34 @@ function SearchFoods() {
                 ))
             }
         </div>
-        <div className='searchContainer__box3'>
-            {
-                filterFoods(value).length > 0 ? (
-                    <ul>
-                        {
-                            filterFoods(value).map((food) => (
-                                <li key={food.foodId}><ButtonFood data={food} /></li>
-                            ))
-                        }
-                    </ul>
-                )
-                : (
-                    <div className='flex-col-center' style={{height: '100%'}}>
-                        <Col>
-                            <p style={{textAlign: 'center', color: 'grey', fontSize: '16px'}}>Không tìm thấy thực phẩm</p>
-                            <p style={{color: '#1890ff', fontWeight: 'bold', textAlign: 'center', fontSize: '16px', marginTop: 15, cursor: 'pointer'}}>Thêm sản phẩm mới</p>
-                        </Col>
-                    </div>
-                )
-            }
-        </div>
         {
-            change === "all" ? (
+            dataTypes[type] === "Tất cả" ? (
                 <div className='searchContainer__box3'>
-                    <ul>
-                        {
-                            filterFoods(value).length > 0 ? filterFoods(value).map((food) => (
-                                <li key={food.foodId}><ButtonFood data={food} /></li>
-                            )) : 'Không tìm thấy món ăn phù hợp!'
-                        }
-                    </ul>
+                    {
+                        filterFoods(value).length > 0 ? (
+                            <ul>
+                                {
+                                    filterFoods(value).map((food) => (
+                                        <li key={food.foodId}><ButtonFood data={food} /></li>
+                                    ))
+                                }
+                            </ul>
+                        )
+                        : (
+                            <div className='flex-col-center' style={{height: '100%'}}>
+                                <Col>
+                                    <p style={{textAlign: 'center', color: 'grey', fontSize: '16px'}}>Không tìm thấy thực phẩm</p>
+                                    <p style={{color: '#1890ff', fontWeight: 'bold', textAlign: 'center', fontSize: '16px', marginTop: 15, cursor: 'pointer'}}>Thêm sản phẩm mới</p>
+                                </Col>
+                            </div>
+                        )
+                    }
                 </div>
             ) : ""
         }
         {
-            change === "myfood" ? (
-            <div className='searchContainer__box3'>
+            dataTypes[type] === "Món ăn của tôi" ? (
+            <div className='searchContainer__box3' style={{padding: '20px'}}>
                 <ul>
                     {
                         myfoods.length > 0 ? myfoods.map(myfood => (
@@ -137,8 +124,8 @@ function SearchFoods() {
         ) : ""
         }
         {
-            change === "meal" ? (
-                <div className='searchContainer__box3'>
+            dataTypes[type] === "Bữa ăn" ? (
+                <div className='searchContainer__box3' style={{padding: '20px'}}>
                     <ul>
                         {
                             myfoods.length > 0 ? myfoods.map(myfood => (
