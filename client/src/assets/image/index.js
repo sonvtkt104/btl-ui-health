@@ -6,6 +6,7 @@ import chuoisu from '../../assets/image/chuoisu.jpg'
 import chuoita from '../../assets/image/chuoita.jpg'
 import chomchom from '../../assets/image/chomchom.jpg'
 import thitlonnac from '../../assets/image/thitlonnac.jpg'
+import apple_green from '../../assets/image/apple_green.jpg'
 
 const img_foods = {
     suachuakhongduong,
@@ -15,7 +16,8 @@ const img_foods = {
     chuoisu,
     chuoita,
     chomchom,
-    thitlonnac
+    thitlonnac,
+    apple_green
 }
 
 export default img_foods;

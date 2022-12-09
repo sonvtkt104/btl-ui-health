@@ -26,10 +26,17 @@ function SearchFoods() {
 
     let navigate = useNavigate(); 
     const routeChange = () => { 
-    let path = `addmyfood`; 
-    navigate(path);
-  }
-    
+        let path = ``; 
+        if(change === 'myfood') {
+            path = `addmyfood`;
+            navigate(path);
+        }
+        else if(change === 'meal') {
+            path = `addmeal`;
+            navigate(path);
+        }
+    }
+  
     const [change, setChange] = useState('all');
 
     const [value, setValue] = useState('');

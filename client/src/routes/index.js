@@ -9,6 +9,7 @@ import {
     SignIn
 } from '../pages'
 import AddMyFood from '../pages/AddMyFood'
+import AddMeal from '../pages/AddMeal'
 
 export default function Router() {
     return (
@@ -26,6 +27,7 @@ export default function Router() {
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/message" element={<Conversation />} />
                 <Route path='/tim-kiem-mon-an/addmyfood' element={<AddMyFood />} />
+                <Route path='/tim-kiem-mon-an/addmeal' element={<AddMeal />} />
             </Routes>
         </BrowserRouter>
     )

@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
 }
 
 .addMyFood_iconClose, .addMyFood_iconBack {
@@ -39,7 +38,7 @@
 
 .nameFood {
     width: 100%;
-    height: 36px;
+    height: 48px;
     margin-bottom: 6px;
     padding: 16px;
     border-radius: 12px;
@@ -79,6 +78,10 @@
 
 .addMyFood_btnNext:hover, .addMyFood_btnSave:hover {
     transform: scale(1.1);
+}
+
+.img_appleGreen{
+    width: 200px;
 }
 
 input {
