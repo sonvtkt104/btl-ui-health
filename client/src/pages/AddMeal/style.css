@@ -14,9 +14,6 @@
     align-content: center;
     flex-direction: column;
     position: relative;
-    /* overflow: hidden;
-    overflow-x: none;
-    overflow-y: scroll; */
 }
 
 .addMeal_iconClose {
@@ -89,13 +86,6 @@
 
 .addMeal_iconBack {
     transform: scale(1.1);
-}
-
-.addMeal_content {
-    /* overflow: hidden;
-    overflow-y: scroll;
-    overflow-x: none; */
-    /* position: relative; */
 }
 
 .addMeal_container2 {

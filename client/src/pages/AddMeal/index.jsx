@@ -76,7 +76,7 @@ function AddMeal() {
                 {
                   listMeals.length > 0 ? (
                     listMeals.map(item => (
-                      <li style={{position: 'relative'}} key={item.foodId}>
+                      <li style={{position: 'relative', width: '100%'}} key={item.foodId}>
                         <ButtonFood data={item} />
                         <FontAwesomeIcon className='icon_Trash' icon={faTrash} />
                       </li>
@@ -235,7 +235,7 @@ function AddMeal() {
                   {
                     listMeals.length > 0 ? (
                       listMeals.map(item => (
-                        <li style={{position: 'relative'}} key={item.foodId}>
+                        <li style={{position: 'relative', width: '100%'}} key={item.foodId}>
                           <ButtonFood data={item} />
                           <FontAwesomeIcon className='icon_Trash' icon={faTrash} />
                         </li>
