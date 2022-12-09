@@ -58,7 +58,7 @@ function AddMyFood() {
         <Fragment>
           <div className="addMyFood_container">
             <div className="addMyFood_iconClose">
-              <Link to={"/tim-kiem-mon-an"}>
+              <Link to={"/search"}>
                 <i>
                   <FontAwesomeIcon icon={faClose} />
                 </i>

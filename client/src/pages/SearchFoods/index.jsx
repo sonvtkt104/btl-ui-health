@@ -5,13 +5,13 @@ import { faClose, faPlus, faQrcode, faSearch } from '@fortawesome/free-solid-svg
 import { ButtonFood } from '../../components'
 import foods from '../../assets/data'
 import { ScanOutlined} from '@ant-design/icons'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {Row, Col} from 'antd'
 
 const dataTypes = ['Tất cả', 'Món ăn của tôi', 'Bữa ăn'];
 
-import img_foods from '../../assets/image'
-import { useNavigate } from 'react-router-dom'
+// import img_foods from '../../assets/image'
+// import { useNavigate } from 'react-router-dom'
 
 const myfoods = [
     // {   
@@ -76,7 +76,7 @@ function SearchFoods() {
         <div className='searchContainer__box2'>
             {
                 dataTypes.map((item, index) => (
-                    <span className={type == index ? 'active' : ''} key={index}
+                    <span className={type === index ? 'active' : ''} key={index}
                         onClick={() => {setType(index)}}
                     >
                         {item}
@@ -106,7 +106,7 @@ function SearchFoods() {
             }
         </div>
         {
-            change == "all" ? (
+            change === "all" ? (
                 <div className='searchContainer__box3'>
                     <ul>
                         {
@@ -119,7 +119,7 @@ function SearchFoods() {
             ) : ""
         }
         {
-            change == "myfood" ? (
+            change === "myfood" ? (
             <div className='searchContainer__box3'>
                 <ul>
                     {
@@ -137,7 +137,7 @@ function SearchFoods() {
         ) : ""
         }
         {
-            change == "meal" ? (
+            change === "meal" ? (
                 <div className='searchContainer__box3'>
                     <ul>
                         {

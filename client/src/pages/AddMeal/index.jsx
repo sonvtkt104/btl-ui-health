@@ -58,7 +58,7 @@ function AddMeal() {
           state === 0 ? (
             <div className='addMeal_container1'>
               <div className="addMeal_iconClose">
-                      <Link to={"/tim-kiem-mon-an"}>
+                      <Link to={"/search"}>
                         <i>
                           <FontAwesomeIcon icon={faClose} />
                         </i>
