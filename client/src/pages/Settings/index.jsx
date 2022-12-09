@@ -99,7 +99,7 @@ export default function Settings() {
                 </Col>
             </Row>
             <div>
-                <h3 style={{marginBottom: 30, fontSize: 24}}>Xin chào, <span style={{color: "#43a5f2"}}>Xuân</span></h3>
+                <h3 style={{marginBottom: 30, fontSize: 24}}>Xin chào, <span style={{color: "#43a5f2"}}>Sơn</span></h3>
             </div>
             <div >
                 <h3 style={{marginBottom: 15}}>Cao cấp</h3>

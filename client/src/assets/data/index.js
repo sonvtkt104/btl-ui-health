@@ -1,9 +1,8 @@
-import img_foods from "../image";
 
 const foods = [
     {   
         foodId: 1,
-        foodImg: img_foods.suachuakhongduong,
+        foodImg: "/images/suachuakhongduong.jpg",
         foodName: 'Sữa chua không đường',
         foodKcal: '61 kcal',
         foodType: 'cup (100 gram)',
@@ -14,7 +13,7 @@ const foods = [
     },
     {
         foodId: 2,
-        foodImg: img_foods.chuoitay,
+        foodImg: "/images/chuoitay.jpg",
         foodName: 'Chuối tây',
         foodKcal: '33 kcal',
         foodType: 'gram / ml',
@@ -25,7 +24,7 @@ const foods = [
     },
     {
         foodId: 3,
-        foodImg: img_foods.phomaiconbocuoi,
+        foodImg: "/images/phomaiconbocuoi.jpg",
         foodName: 'Phô mai con bò cười',
         foodKcal: '201 kcal',
         foodType: 'cup, small (15 gram)',
@@ -36,7 +35,7 @@ const foods = [
     },
     {
         foodId: 4,
-        foodImg: img_foods.yenthach,
+        foodImg: "/images/yenthach.jpg",
         foodName: 'Yến thạch',
         foodKcal: '140 kcal',
         foodType: 'small (40 gram)',
@@ -47,7 +46,7 @@ const foods = [
     },
     {
         foodId: 5,
-        foodImg: img_foods.chuoisu,
+        foodImg: "/images/chuoisu.jpg",
         foodName: 'Chuối sứ',
         foodKcal: '54 kcal',
         foodType: 'spread',
@@ -58,7 +57,7 @@ const foods = [
     },
     {
         foodId: 6,
-        foodImg: img_foods.chuoita,
+        foodImg: "/images/chuoita.jpg",
         foodName: 'Chuối ta',
         foodKcal: '99 kcal',
         foodType: 'fruit',
@@ -69,7 +68,7 @@ const foods = [
     },
     {
         foodId: 7,
-        foodImg: img_foods.chomchom,
+        foodImg: "/images/chomchom.jpg",
         foodName: 'Quả chôm chôm',
         foodKcal: '5 kcal',
         foodType: 'feaspoon',
@@ -80,7 +79,7 @@ const foods = [
     },
     {
         foodId: 8,
-        foodImg: img_foods.thitlonnac,
+        foodImg: "/images/thitlonnac.jpg",
         foodName: 'Thịt lợn nạc',
         foodKcal: '136 kcal',
         foodType: 'Lát (100 gram)',
@@ -91,48 +90,136 @@ const foods = [
     },
     {
         foodId: 9,
-        foodImg: img_foods.chuoisu,
-        foodName: 'Chuối sứ',
-        foodKcal: '54 kcal',
-        foodType: 'spread',
-        foodCalories: 40,
-        foodCarbs: 4.8,
-        foodProtein: 3.7,
-        foodFat: 3
+        foodImg: "/images/banhmi.jpg",
+        foodName: 'Bánh mì',
+        foodKcal: '596 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 596,
+        foodCarbs: 70,
+        foodProtein: 35,
+        foodFat: 19
     },
     {
         foodId: 10,
-        foodImg: img_foods.chuoita,
-        foodName: 'Chuối ta',
-        foodKcal: '99 kcal',
-        foodType: 'fruit',
-        foodCalories: 50,
-        foodCarbs: 3.6,
-        foodProtein: 3.7,
-        foodFat: 3
+        foodImg: "/images/tao.jpg",
+        foodName: 'Táo',
+        foodKcal: '9 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 9,
+        foodCarbs: 3,
+        foodProtein: 0,
+        foodFat: 0
     },
     {
         foodId: 11,
-        foodImg: img_foods.chomchom,
-        foodName: 'Quả chôm chôm',
-        foodKcal: '5 kcal',
-        foodType: 'feaspoon',
-        foodCalories: 100,
-        foodCarbs: 4.8,
-        foodProtein: 3.7,
-        foodFat: 0.5
+        foodImg: "/images/banhquy.jpg",
+        foodName: 'Bánh quy',
+        foodKcal: '137 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 137,
+        foodCarbs: 17,
+        foodProtein: 2,
+        foodFat: 8
     },
     {
         foodId: 12,
-        foodImg: img_foods.thitlonnac,
-        foodName: 'Thịt lợn nạc',
-        foodKcal: '136 kcal',
-        foodType: 'Lát (100 gram)',
-        foodCalories: 200,
-        foodCarbs: 4,
-        foodProtein: 3,
-        foodFat: 10
-    }
+        foodImg: "/images/caibap.jpg",
+        foodName: 'Cải bắp',
+        foodKcal: '138 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 138,
+        foodCarbs: 17,
+        foodProtein: 7,
+        foodFat: 1
+    },
+    {
+        foodId: 13,
+        foodImg: "/images/cahoi.jpg",
+        foodName: 'Cá hồi',
+        foodKcal: '159 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 159,
+        foodCarbs: 0,
+        foodProtein: 25,
+        foodFat: 6
+    },
+    {
+        foodId: 14,
+        foodImg: "/images/cam.jpg",
+        foodName: 'Cam',
+        foodKcal: '142 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 142,
+        foodCarbs: 36,
+        foodProtein: 1,
+        foodFat: 0
+    },
+    {
+        foodId: 15,
+        foodImg: "/images/cocsua.jpg",
+        foodName: 'Cốc sữa',
+        foodKcal: '150 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 150,
+        foodCarbs: 15,
+        foodProtein: 10,
+        foodFat: 6
+    },
+    {
+        foodId: 16,
+        foodImg: "/images/traxanh.jpg",
+        foodName: 'Trà xanh',
+        foodKcal: '10 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 10,
+        foodCarbs: 2,
+        foodProtein: 0,
+        foodFat: 0
+    },
+    {
+        foodId: 17,
+        foodImg: "/images/thitga.jpg",
+        foodName: 'Thịt gà',
+        foodKcal: '146 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 147,
+        foodCarbs: 10,
+        foodProtein: 9,
+        foodFat: 9
+    },
+    {
+        foodId: 18,
+        foodImg: "/images/thitbo.jpg",
+        foodName: 'Thịt bò',
+        foodKcal: '961 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 961,
+        foodCarbs:0,
+        foodProtein: 90,
+        foodFat: 65
+    },
+    {
+        foodId: 19,
+        foodImg: "/images/trung.jpg",
+        foodName: 'Trứng gà',
+        foodKcal: '12 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 12,
+        foodCarbs:1,
+        foodProtein: 1,
+        foodFat: 1
+    },
+    {
+        foodId: 20,
+        foodImg: "/images/khoatay.jpg",
+        foodName: 'Khoai tây',
+        foodKcal: '68 kcal',
+        foodType: 'gram / ml',
+        foodCalories: 68,
+        foodCarbs:16,
+        foodProtein: 2,
+        foodFat: 1
+    },
 ]
 
 export default foods;

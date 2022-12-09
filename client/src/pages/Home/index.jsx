@@ -188,32 +188,7 @@ export default function Home() {
                         {/* Bữa trưa */}
                         {headerMeal("Bữa trưa", 12)}
 
-                        <div className='food'>
-                            <div>
-                                <img className='foodImage' src={thitlonnac} />
-                            </div>
-                            <div className='foodInfo'>
-                                <span className='foodName'>Thịt lợn nạc</span>
-                                <br/>
-                                <span className='details'>236 kcal - 100 gram / ml</span>
-                            </div>
-                            <div className='infoIcon'>
-                                <InfoCircleOutlined />
-                            </div>
-                        </div>
-                        <div className='food'>
-                            <div>
-                                <img className='foodImage' src={yenthach} />
-                            </div>
-                            <div className='foodInfo'>
-                                <span className='foodName'>Yến thạch</span>
-                                <br/>
-                                <span className='details'>140 kcal - 40 gram / ml</span>
-                            </div>
-                            <div className='infoIcon'>
-                                <InfoCircleOutlined />
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 {
@@ -237,58 +212,7 @@ export default function Home() {
                     )
                 }
             </div>
-            <div className='userContainer'>
-                <div className='userHeader'>
-                    <Row justify='space-between' style={{ maxHeight: 100 ,padding: '50px 25px 30px 25px', borderBottom: '1px solid #eeeeee', background: 'white', top: 0, left: 0, right: 0, zIndex: '2'}}>
-                        <Col>
-                            <Row>
-                                <Col style={{fontSize: 24, fontWeight: 'bold', lineHeight: '22px'}}>
-                                    Xin chào
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col>
-                            <Row>
-                                <Col>
-                                    <SettingOutlined style={{fontSize: 22, marginRight: 10}} />
-                                </Col>
-                                <Col>
-                                    <UserOutlined style={{fontSize: 22, marginRight: 10}} />
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </div>
-                <div className='stats'>
-                    <div className='statsInfo'>
-                        <div className='measurement'>
-                            <span style={{fontSize: 24}}>Tăng 4.0 kg</span>
-                            <br />
-                            <span>Từ ngày 30 tháng 10</span>
-                        </div>
-                        <div className='startStats'>
-                            <span>53.0 kg</span>
-                            <span>Khởi đầu</span>
-                        </div>
-                        <div className='currentStats'>
-                            <span>57.0 kg</span>
-                            <span>Hiện tại</span>
-                        </div>
-                        <div className='goalStats'>
-                            <span>60.0 kg</span>
-                            <span>Mục tiêu</span>
-                        </div>
-                    </div>
-                    <div className='icon'>
-                        <image scr={iconFood} />
-                    </div>
-                </div>
-                <div className='commentary'>
-                    <span style={{fontSize: 18}}>Đánh giá về lượng calo nhập vào</span>
-                    <br />
-                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
-                </div>
-            </div>
+           
             <PlusOutlined 
                 className='chat-plus'
                 style={{
