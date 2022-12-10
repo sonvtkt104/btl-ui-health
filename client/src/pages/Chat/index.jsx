@@ -42,6 +42,8 @@ const data = [
 
 
 export default function Chat () {
+    const [type, setType] = useState(0)
+
 
     const navigate = useNavigate()
 
@@ -100,42 +102,62 @@ export default function Chat () {
                             fontSize: 16,
                             marginRight: 10,
                             padding: '0 10px 15px',
-                            borderBottom: '2px solid #00b4ff',
-                            fontWeight: 'bold'
-                        }}>
+                            borderBottom: type == 0 ? '2px solid #00b4ff' : "none",
+                            fontWeight: type == 0 ? 'bold' : '400'
+                            
+                        }}
+                            onClick={() => {setType(0)}}
+                        >
                             Bác sĩ
                         </Col>
                         <Col style={{
                             fontSize: 16,
                             marginLeft: 10,
-                            padding: '0 10px 15px'
-                        }}>
+                            padding: '0 10px 15px',
+                            borderBottom : type == 1 ? '2px solid #00b4ff' : "none",
+                            fontWeight: type == 1 ? 'bold' : '400'
+                        }}
+                            onClick={() => {setType(1)}}
+                        >
                             Người dùng
                         </Col>
                     </Row>
                     {
-                        data.map((item, i) => (
-                            <Row justify='space-between' style={{marginBottom: 20}}
-                                onClick={() => {
-                                    navigate("/message", {state:{id:i,name:item.name}})
-                                }}
-                            >
-                                <Col xs={19}>
-                                    <Row>
-                                        <Col >
-                                            <img style={{width: 60, height: 60, borderRadius: '50%'}} src={`/images/logo-user-${i}.jpeg`} alt="" />
-                                        </Col>
-                                        <Col style={{marginLeft: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                                            <p style={{fontWeight: 'bold', fontSize: '16px', marginBottom: 5}}>{item.name}</p>
-                                            <span style={{fontSize: 14, color: '#a6abae'}}>{item.lastMessage}</span>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                                <Col xs={5} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center'}}>
-                                    <span>{item.time}</span>
-                                </Col>
-                            </Row>
-                        ))
+                        type == 0 ? (
+                            <>
+                                {
+                                    data.map((item, i) => (
+                                        <Row justify='space-between' style={{marginBottom: 20}}
+                                            onClick={() => {
+                                                navigate("/message", {state:{id:i,name:item.name}})
+                                            }}
+                                        >
+                                            <Col xs={19}>
+                                                <Row>
+                                                    <Col >
+                                                        <img style={{width: 60, height: 60, borderRadius: '50%'}} src={`/images/logo-user-${i}.jpeg`} alt="" />
+                                                    </Col>
+                                                    <Col style={{marginLeft: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                                                        <p style={{fontWeight: 'bold', fontSize: '16px', marginBottom: 5}}>{item.name}</p>
+                                                        <span style={{fontSize: 14, color: '#a6abae'}}>{item.lastMessage}</span>
+                                                    </Col>
+                                                </Row>
+                                            </Col>
+                                            <Col xs={5} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center'}}>
+                                                <span>{item.time}</span>
+                                            </Col>
+                                        </Row>
+                                    ))
+                                }
+                            </>
+                        ) : (
+                            <Col className="flex-col-center" style={{marginTop: 40, textAlign: 'center'}}>
+                                <Row justify='center' style={{fontWeight: 'bold'}}>
+                                    Danh sách người liên hệ trống
+                                </Row>
+                                <Row justify='center'>Hãy tìm kiếm và kết nối những người dùng khác</Row>
+                            </Col>
+                        )
                     }
                 </div>
                 <PlusOutlined 
