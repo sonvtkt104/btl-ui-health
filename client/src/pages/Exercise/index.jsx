@@ -10,41 +10,15 @@ import {
     faPersonSwimming,
     faPeopleGroup
 } from '@fortawesome/free-solid-svg-icons';
+import {useNavigate} from 'react-router-dom'
+import { exercises as dataCurrent } from "../../assets/data";
+import { useSelector } from "react-redux";
 
-const dataCurrent = [
-    {
-        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonWalking}/></i>,
-        name: "Đi bộ dưỡng sinh",
-        type: "Nhẹ nhàng",
-        time: "30 phút"
-    },
-    {
-        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonBiking}/></i>,
-        name: "Đạp xe đường dài",
-        type: "Bình thường",
-        time: "1 giờ"
-    },
-    {
-        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonRunning}/></i>,
-        name: "Chạy ngắn",
-        type: "Nhẹ nhàng",
-        time: "20 phút"
-    },
-    {
-        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonSwimming}/></i>,
-        name: "Bơi dài",
-        type: "Nâng cao",
-        time: "1 giờ"
-    },
-    {
-        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPeopleGroup}/></i>,
-        name: "Thể dục nhịp điệu 60 động tác",
-        type: "Bình thường",
-        time: "1 giờ"
-    }
-]
 
 export default function Exercise () {
+    const navigate = useNavigate()
+    const {exercisesToday} = useSelector((state) => state.app)
+
     return (
         <div className="exercise"
             style={{
@@ -80,12 +54,14 @@ export default function Exercise () {
                             title: <span style={{fontWeight: 'bold'}}>Hôm nay</span>,
                             description: (
                                 <div style={{padding: 10}}> 
-                                    <ItemExercise 
-                                        data={dataCurrent[0]}
-                                    />
-                                    <ItemExercise 
-                                        data={dataCurrent[1]}
-                                    />
+                                    {
+                                        exercisesToday.map((id, i) => (
+                                            <ItemExercise 
+                                                key={i}
+                                                data={dataCurrent[id - 1]}
+                                            />
+                                        ))  
+                                    }
                                 </div>
                             )
                         },
@@ -135,7 +111,7 @@ export default function Exercise () {
                     cursor: 'pointer'
                 }} 
                 onClick={() => {
-                    
+                    navigate("/list-exercise")
                 }}
             />
 

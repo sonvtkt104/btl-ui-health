@@ -1,4 +1,13 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+    faPersonWalking, 
+    faPersonBiking ,
+    faPersonRunning,
+    faPersonSwimming,
+    faPeopleGroup
+} from '@fortawesome/free-solid-svg-icons';
+
 const foods = [
     {   
         foodId: 1,
@@ -220,6 +229,44 @@ const foods = [
         foodProtein: 2,
         foodFat: 1
     },
+]
+
+export const exercises = [
+    {
+        id: 1,
+        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonWalking}/></i>,
+        name: "Đi bộ dưỡng sinh",
+        type: "Nhẹ nhàng",
+        time: "30 phút"
+    },
+    {
+        id: 2,
+        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonBiking}/></i>,
+        name: "Đạp xe đường dài",
+        type: "Bình thường",
+        time: "1 giờ"
+    },
+    {
+        id: 3,
+        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonRunning}/></i>,
+        name: "Chạy ngắn",
+        type: "Nhẹ nhàng",
+        time: "20 phút"
+    },
+    {
+        id: 4,
+        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPersonSwimming}/></i>,
+        name: "Bơi dài",
+        type: "Nâng cao",
+        time: "1 giờ"
+    },
+    {
+        id: 5,
+        icon: <i style={{fontSize: 26}}><FontAwesomeIcon icon={faPeopleGroup}/></i>,
+        name: "Thể dục nhịp điệu 60 động tác",
+        type: "Bình thường",
+        time: "1 giờ"
+    }
 ]
 
 export default foods;

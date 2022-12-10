@@ -20,13 +20,14 @@
     align-items: center;
     flex-direction: column;
     background-color: var(--background-color);
-    padding: 4px 0;
 }
 
 .diaryContainer{
     display: block;
     padding: 110px 20px;
     background: #f9fdff;
+    height: 100vh;
+    overflow: auto;
 }
 
 .userContainer{

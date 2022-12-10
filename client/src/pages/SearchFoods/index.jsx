@@ -3,14 +3,18 @@ import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose, faQrcode, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { ButtonFood } from '../../components'
-import foods from '../../assets/data'
 import { ScanOutlined} from '@ant-design/icons'
 import {Link} from 'react-router-dom'
 import {Row, Col} from 'antd'
+import { useSelector } from 'react-redux'
 
 const dataTypes = ['Tất cả', 'Món ăn của tôi', 'Bữa ăn'];
 
 function SearchFoods() {
+
+    const {foods} = useSelector((state) => state.app)
+    console.log(foods)
+
     
     const [value, setValue] = useState('');
     const [type, setType] = useState(0)

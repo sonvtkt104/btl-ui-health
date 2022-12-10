@@ -10,6 +10,7 @@ import {
     Exercise
 } from '../pages'
 import QuickInfo from '../pages/QuickInfo'
+import ListExercise from '../pages/ListExercise'
 
 export default function Router() {
     return (
@@ -32,6 +33,7 @@ export default function Router() {
                 <Route path="/quick-test" element={<QuickTest />} />
                 <Route path="/exercise" element={<Exercise />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/list-exercise" element={<ListExercise />} />
             </Routes>
         </BrowserRouter>
     )

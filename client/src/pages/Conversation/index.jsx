@@ -11,7 +11,7 @@ import {
     SendOutlined,
 } from '@ant-design/icons'
 import './index.css'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 const messagesData = [
@@ -28,6 +28,8 @@ const messagesData = [
 export default function Conversation() {
     const [messages, setMessages] = useState(messagesData)
     const [text, setText] = useState("")
+
+    const location = useLocation();
 
     useEffect(() => {
         let element = document.querySelector(".app-chat-content")
@@ -63,11 +65,11 @@ export default function Conversation() {
                         <Col>
                             <img 
                                 style={{width: 40, height: 40, borderRadius: '50%'}} 
-                                src="/images/logo-user.jpeg" alt="" 
+                                src={`/images/logo-user-${location.state.id}.jpeg`} alt="" 
                             />
                         </Col>
                         <Col style={{marginLeft: 8, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                            <p style={{ fontWeight: 'bold', fontSize: '16px' }}>Hiếu Văn</p>
+                            <p style={{ fontWeight: 'bold', fontSize: '16px' }}>{location.state.name}</p>
                             <span style={{ color: 'grey'}}>Online</span>
                         </Col>
                     </Row>

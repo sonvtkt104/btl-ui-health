@@ -14,11 +14,30 @@ import { useNavigate } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 
 const data = [
-    "Hiếu Văn",
-    "Sơn",
-    "Hava",
-    "Madison",
-    "Văn Toàn"
+    {
+        name: "Hiếu Văn",
+        lastMessage: "Hey, how are you?",
+        time: '1:04am'
+    },
+    {
+        name: "Sơn",
+        lastMessage: "Good luck!",
+        time: '9:10am'
+    },
+    {
+        name: "Hava",
+        lastMessage: "Thank you.",
+        time: '5:20pm'
+    },
+    {
+        name: "Madison",
+        lastMessage: "Hello, can you tell me?",
+        time: '9:21pm'
+    },
+    {
+        name: "Văn Toàn",
+        lastMessage: "oke, see again",
+    }
 ]
 
 
@@ -53,7 +72,7 @@ export default function Chat () {
                     <div className='chat-scroll-x' style={{ overflowX: 'scroll', paddingBottom: 20, paddingLeft: 25, borderBottom: '1px solid #eeeeee'}}>
                         <div style={{display: "inline-flex"}}>
                             {
-                                Array.from(Array(5).keys()).map((item, i) => (
+                                data.map((item, i) => (
                                     <p
                                         className="box-user active"
                                         style = {{ 
@@ -63,6 +82,9 @@ export default function Chat () {
                                             backgroundSize: 'cover',
                                             marginRight: 15,
                                             position: 'relative',
+                                        }}
+                                        onClick={() => {
+                                            navigate("/message",{state:{id:i,name:item.name}})
                                         }}
                                     >
                                         <span></span>
@@ -81,20 +103,21 @@ export default function Chat () {
                             borderBottom: '2px solid #00b4ff',
                             fontWeight: 'bold'
                         }}>
-                            Nguời dùng
+                            Bác sĩ
                         </Col>
                         <Col style={{
                             fontSize: 16,
                             marginLeft: 10,
                             padding: '0 10px 15px'
                         }}>
-                            Bác sĩ</Col>
+                            Người dùng
+                        </Col>
                     </Row>
                     {
-                        Array.from(Array(5).keys()).map((item, i) => (
+                        data.map((item, i) => (
                             <Row justify='space-between' style={{marginBottom: 20}}
                                 onClick={() => {
-                                    navigate("/message")
+                                    navigate("/message", {state:{id:i,name:item.name}})
                                 }}
                             >
                                 <Col xs={19}>
@@ -103,13 +126,13 @@ export default function Chat () {
                                             <img style={{width: 60, height: 60, borderRadius: '50%'}} src={`/images/logo-user-${i}.jpeg`} alt="" />
                                         </Col>
                                         <Col style={{marginLeft: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                                            <p style={{fontWeight: 'bold', fontSize: '16px', marginBottom: 5}}>{data[i]}</p>
-                                            <span style={{fontSize: 14, color: '#a6abae'}}>hey, how are you?</span>
+                                            <p style={{fontWeight: 'bold', fontSize: '16px', marginBottom: 5}}>{item.name}</p>
+                                            <span style={{fontSize: 14, color: '#a6abae'}}>{item.lastMessage}</span>
                                         </Col>
                                     </Row>
                                 </Col>
                                 <Col xs={5} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center'}}>
-                                    <span>1:04am</span>
+                                    <span>{item.time}</span>
                                 </Col>
                             </Row>
                         ))

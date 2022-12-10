@@ -136,6 +136,9 @@ export default function QuickTest() {
             {
                 screen == 0 ? (
                     <Row style={{height: '100%', textAlign: 'center'}} className='flex-col-center'>
+                        <span>
+                            <img src="/images/logo.png" alt="logo" />
+                        </span>
                         <span style={{marginBottom: 15, padding: '0 30px', fontWeight: 'bold'}}>Hãy cùng chúng tôi kiểm tra sức khỏe của bạn nhé!</span>
                         <span>
                             <ButtonApp 

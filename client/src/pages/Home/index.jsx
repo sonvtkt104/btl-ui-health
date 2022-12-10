@@ -19,24 +19,73 @@ import {
     BellOutlined
 } from '@ant-design/icons'
 import './index.css'
-import iconFood from '../../assets/image/foodIcon.png'
-import chuoiTay from '../../assets/image/chuoitay.jpg'
-import suachua from '../../assets/image/suachuakhongduong.jpg'
-import thitlonnac from '../../assets/image/thitlonnac.jpg'
-import yenthach from '../../assets/image/yenthach.jpg'
 import { Footer, ItemFood } from '../../components'
-import {useState} from 'react'
-import foods from '../../assets/data'
-
+import {useState, useMemo, useEffect} from 'react'
+import { useSelector } from 'react-redux'
 
 export default function Home() {
     const [openTips, setOpenTips] = useState(true)
+
+    const {
+        foodsBreakFirst, 
+        foodsLunch, 
+        foodsDinner, 
+        foodsSnack,
+        calorieMax,
+        carbsMax,
+        proteinMax,
+        fatMax
+    } = useSelector((state) => state.app)
 
     const navigate = useNavigate()
     
     const onChangeDate = (date, dateString) => {
         console.log(date, dateString);
     };
+
+    const caloriesBreakFirst = useMemo(()=>{
+        return foodsBreakFirst.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.foodCalories,
+            0
+          );
+    }, [foodsBreakFirst])
+
+    const caloriesLunch = useMemo(()=>{
+        return foodsLunch.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.foodCalories,
+            0
+          );
+    }, [foodsLunch])
+
+    const caloriesDinner = useMemo(()=>{
+        return foodsDinner.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.foodCalories,
+            0
+          );
+    }, [foodsDinner])
+
+    const caloriesSnack = useMemo(()=>{
+        return foodsSnack.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.foodCalories,
+            0
+          );
+    }, [foodsSnack])
+
+    const caloriesTotal = useMemo(()=>{
+        return caloriesBreakFirst + caloriesLunch + caloriesDinner + caloriesSnack
+    }, [caloriesBreakFirst, caloriesLunch, caloriesDinner, caloriesSnack])
+
+    const carbsProteinFat = useMemo(()=>{
+        let foods = foodsBreakFirst.concat(foodsLunch, foodsDinner, foodsSnack)
+        let carbs = 0, protein = 0, fat = 0;
+        foods.map(item => {
+            carbs += item.foodCarbs
+            protein += item.foodProtein
+            fat += item.foodFat
+        })
+
+        return carbs + " " + protein + " " + fat
+    }, [foodsBreakFirst, foodsLunch, foodsDinner, foodsSnack])
 
     const headerMeal = (type, calories) => {
         return (
@@ -89,14 +138,21 @@ export default function Home() {
                 </div>
                 <div className='chart'>
                     <Row justify='space-between' style={{margin: '15px 0 0px'}}>
-                        <Col style={{}}>Bạn vẫn có thể hấp thu 2.515 calories</Col>
+                        <Col style={{}}>
+                            {
+                                (calorieMax - caloriesTotal) > 0 
+                                ? `Bạn vẫn có thể hấp thu ${calorieMax - caloriesTotal} calories`
+                                : `Bạn đã hấp thu quá ${caloriesTotal - calorieMax} calories`
+                            }
+                            
+                        </Col>
                     </Row>
                     <Row>
-                        <Progress percent={5} showInfo={false} strokeColor="#43a5f2" />
+                        <Progress percent={parseInt(caloriesTotal * 100 / calorieMax)} showInfo={false} strokeColor="#43a5f2" />
                     </Row>
                     <Row justify='space-between' style={{margin: '0px 0 15px'}}>
-                        <Col style={{color: 'grey'}}>Đã tiêu thụ 33 calories</Col>
-                        <Col style={{fontWeight: 'bold'}}>Mục tiêu: <span style={{color: '#1890ff'}}>1.917</span></Col>
+                        <Col style={{color: 'grey'}}>Đã tiêu thụ {caloriesTotal} calories</Col>
+                        <Col style={{fontWeight: 'bold'}}>Mục tiêu: <span style={{color: '#1890ff'}}>{calorieMax}</span></Col>
                     </Row>
                     <Row justify='space-between' style={{margin: '30px 0 10px'}}>
                         <Col xs={8} style={{padding: '0 5px', textAlign: 'center'}}>
@@ -105,7 +161,7 @@ export default function Home() {
                                 strokeColor="#65bc66"
                                 trailColor="#EDF1F5"
                                 strokeWidth={9}
-                                percent={10}
+                                percent={parseInt(carbsProteinFat.split(" ")[0] * 100 / carbsMax)}
                                 format={(percent) => {
                                     return (
                                         <div style={{
@@ -122,7 +178,7 @@ export default function Home() {
                                 }}
                                 width={80}
                             />
-                            <Row justify='center' style={{color:'#65bc66', marginTop: 7, fontWeight: '600' }}>Tinh bột</Row>
+                            <Row justify='center' style={{color:'#65bc66', marginTop: 7, fontWeight: '600' }}>{`${carbsMax}g `}Tinh bột</Row>
                         </Col>
                         <Col xs={8} style={{padding: '0 5px', textAlign: 'center'}}>
                             <Progress 
@@ -130,7 +186,7 @@ export default function Home() {
                                 strokeColor="#e5447a"
                                 trailColor="#EDF1F5"
                                 strokeWidth={9}
-                                percent={3}
+                                percent={parseInt(carbsProteinFat.split(" ")[1] * 100 / proteinMax)}
                                 format={(percent) => {
                                     return (
                                         <div style={{
@@ -147,7 +203,7 @@ export default function Home() {
                                 }}
                                 width={80}
                             />
-                            <Row justify='center' style={{color:'#e5447a', marginTop: 7, fontWeight: '600' }}>Chất đạm</Row>
+                            <Row justify='center' style={{color:'#e5447a', marginTop: 7, fontWeight: '600' }}>{`${proteinMax}g `}Chất đạm</Row>
                         </Col>
                         <Col xs={8} style={{padding: '0 5px', textAlign: 'center'}}>
                             <Progress 
@@ -155,7 +211,7 @@ export default function Home() {
                                 strokeColor="#fe6f46"
                                 trailColor="#EDF1F5"
                                 strokeWidth={9}
-                                percent={15}
+                                percent={parseInt(carbsProteinFat.split(" ")[2] * 100 / fatMax)}
                                 format={(percent) => {
                                     return (
                                         <div style={{
@@ -172,22 +228,60 @@ export default function Home() {
                                 }}
                                 width={80}
                             />
-                            <Row justify='center' style={{color:'#fe6f46', marginTop: 7, fontWeight: '600' }}>Chất béo</Row>
+                            <Row justify='center' style={{color:'#fe6f46', marginTop: 7, fontWeight: '600' }}>{`${fatMax}g `}Chất béo</Row>
                         </Col>
                     </Row>
                 </div>
                 <div className='foodChoice'>
                     <div className='meal' style={{padding: '0 0 20px 0'}}>
-                        {headerMeal('Bữa sáng', 133)}
                         {
-                            foods.map((item, i) => (
-                                <ItemFood key={i} data={item}/>
-                            ))
+                            foodsBreakFirst.length > 0 ? (
+                                <>
+                                    {headerMeal('Bữa sáng', caloriesBreakFirst)}
+                                    {
+                                        foodsBreakFirst.map((item, i) => (
+                                            <ItemFood key={i} data={item} type={'sang'}/>
+                                        ))
+                                    }
+                                </>
+                            ) : ""
                         }
-
-                        {/* Bữa trưa */}
-                        {headerMeal("Bữa trưa", 12)}
-
+                        {
+                            foodsLunch.length > 0 ? (
+                                <>
+                                    {headerMeal('Bữa trưa', caloriesLunch)}
+                                    {
+                                        foodsLunch.map((item, i) => (
+                                            <ItemFood key={i} data={item} type={"trua"}/>
+                                        ))
+                                    }
+                                </>
+                            ) : ""
+                        }
+                        {
+                            foodsDinner.length > 0 ? (
+                                <>
+                                    {headerMeal('Bữa tối', caloriesDinner)}
+                                    {
+                                        foodsDinner.map((item, i) => (
+                                            <ItemFood key={i} data={item} type={"toi"}/>
+                                        ))
+                                    }
+                                </>
+                            ) : ""
+                        }
+                        {
+                            foodsSnack.length > 0 ? (
+                                <>
+                                    {headerMeal('Bữa phụ', caloriesSnack)}
+                                    {
+                                        foodsSnack.map((item, i) => (
+                                            <ItemFood key={i} data={item} type={"phu"}/>
+                                        ))
+                                    }
+                                </>
+                            ) : ""
+                        }
                         
                     </div>
                 </div>

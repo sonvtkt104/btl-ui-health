@@ -14,6 +14,7 @@ import {
 } from '@ant-design/icons'
 import { Link} from 'react-router-dom'
 import ItemSettings from '../../components/ItemSettings'
+import { useSelector } from 'react-redux'
 
 const data1 = [
     {
@@ -65,6 +66,9 @@ const data3 = [
 ]
 
 export default function Settings() {
+
+    const {name} = useSelector((state) => state.app)
+
     return (
         <div className="app-settings"
             style={{
@@ -99,7 +103,7 @@ export default function Settings() {
                 </Col>
             </Row>
             <div>
-                <h3 style={{marginBottom: 30, fontSize: 24}}>Xin chào, <span style={{color: "#43a5f2"}}>Sơn</span></h3>
+                <h3 style={{marginBottom: 30, fontSize: 24}}>Xin chào, <span style={{color: "#43a5f2"}}>{name}</span></h3>
             </div>
             <div >
                 <h3 style={{marginBottom: 15}}>Cao cấp</h3>

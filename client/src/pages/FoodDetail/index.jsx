@@ -3,10 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faEllipsisVertical, faPersonBiking, faPersonRunning, faPersonWalking } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom'
 import { Col, Row, Select } from 'antd';
+import {useState} from 'react'
+import { useDispatch } from 'react-redux';
+import {addFoodBreakFirst, addFoodLunch, addFoodDinner, addFoodSnack} from '../../redux/appSlice'
 
 const { Option } = Select
 
 function FoodDetail({data}) {
+    const dispatch = useDispatch()
+
+    const [quantity, setQuantity] = useState(1)
+    const [type, setType] = useState(0)
 
     const navigate = useNavigate()
 
@@ -61,14 +68,15 @@ function FoodDetail({data}) {
                             </span>
                             <span>
                                 <Select 
-                                    value={100}
+                                    value={quantity}
                                     style={{width: 100, fontWeight: "bold"}}
+                                    onChange={(value) => { setQuantity(value);}}
                                 >
-                                    <Option value={100}>100</Option>
-                                    <Option value={100}>200</Option>
-                                    <Option value={100}>300</Option>
-                                    <Option value={100}>400</Option>
-                                    <Option value={100}>500</Option>
+                                    <Option value={1}>100</Option>
+                                    <Option value={2}>200</Option>
+                                    <Option value={3}>300</Option>
+                                    <Option value={4}>400</Option>
+                                    <Option value={5}>500</Option>
                                 </Select>
                             </span>
                             <span style={{lineHeight: '35px', color: 'grey', marginLeft: 10}}>gram / ml</span>
@@ -80,16 +88,16 @@ function FoodDetail({data}) {
                         <Row>
                             <Col flex={'auto'}>
                                     <Select
-                                        defaultValue="Bữa sáng"
+                                        value={type}
                                         style={{
                                             width: '100%',
                                         }}
-                                        onChange={handleChange}
+                                        onChange={(value) => {setType(value);}}
                                     >
-                                        <Option>Bữa sáng</Option>
-                                        <Option>Bữa trưa</Option>
-                                        <Option>Bữa tối</Option>
-                                        <Option>Bữa phụ</Option>
+                                        <Option value={0}>Bữa sáng</Option>
+                                        <Option value={1}>Bữa trưa</Option>
+                                        <Option value={2}>Bữa tối</Option>
+                                        <Option value={3}>Bữa phụ</Option>
                                     </Select>
                                 </Col>
                         </Row>
@@ -138,6 +146,30 @@ function FoodDetail({data}) {
                         bottom: '15px'
                     }}
                     onClick={() => {
+                        let food = {...data}
+                        food.foodCalories = food.foodCalories * quantity
+                        food.foodCarbs = food.foodCarbs * quantity
+                        food.foodProtein = food.foodProtein * quantity
+                        food.foodFat = food.foodFat * quantity
+
+                        switch (type) {
+                            case 0:
+                                dispatch(addFoodBreakFirst({food}))
+                                break;
+                            case 1:
+                                dispatch(addFoodLunch({food}))
+                                break;
+                            case 2:
+                                dispatch(addFoodDinner({food}))
+                                break;
+                            case 3:
+                                dispatch(addFoodSnack({food}))
+                                break;
+                        
+                            default:
+                                break;
+                        }
+                        
                         navigate("/home")
                     }}
                 >
